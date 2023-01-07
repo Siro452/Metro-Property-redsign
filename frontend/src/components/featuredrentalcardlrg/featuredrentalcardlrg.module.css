@@ -1,0 +1,13 @@
+.outermostcontainer{
+    display: flex;
+    width: 85%;
+    height: 26rem;
+    margin-bottom: 2.8rem;
+    border-radius: .75rem;
+
+    background-color: rgb(203, 203, 203);
+}
+
+.outermostcontainer img{
+    width: 100%;
+}

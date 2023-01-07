@@ -1,0 +1,43 @@
+.upperheader {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.metrologo {
+  align-items: flex-start;
+}
+
+.Line-2 {
+  width: 1px;
+  height: 67px;
+  flex-grow: 0;
+  margin: 0 40.5px 0 26.5px;
+  transform: rotate(-270deg);
+  background-color: #100c0c;
+}
+
+.lowerheader {
+  background-color: #e53436;
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.ul {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+
+.li {
+  margin: 0.5px 0 0;
+  padding: 25px 24px;
+  border-radius: 4px;
+}

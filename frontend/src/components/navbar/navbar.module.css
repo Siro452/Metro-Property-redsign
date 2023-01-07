@@ -30,14 +30,29 @@
   color: #fff;
 }
 
-.ul {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.li {
-  margin: 0.5px 0 0;
-  padding: 25px 24px;
-  border-radius: 4px;
+.dropdown_owners {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+}
+
+.dropdown_tenant {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+}
+
+.dropdown_aboutus {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+}
+
+.dropdown:hover .dropdownmenu {
+  display: block;
 }

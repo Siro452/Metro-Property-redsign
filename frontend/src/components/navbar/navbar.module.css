@@ -32,27 +32,19 @@
 
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
-.dropdown_owners {
-  display: none;
-  position: absolute;
-  background: #ffffff;
-}
-
-.dropdown_tenant {
-  display: none;
-  position: absolute;
-  background: #ffffff;
-}
-
+.dropdown_owners,
+.dropdown_tenant,
 .dropdown_aboutus {
   display: none;
   position: absolute;
   background: #ffffff;
+  z-index: 1;
 }
 
-.dropdown:hover .dropdownmenu {
+.dropdown:hover .dropdown_owners,
+.dropdown_tenant,
+.dropdown_aboutus {
   display: block;
 }

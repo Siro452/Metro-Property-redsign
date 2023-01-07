@@ -53,6 +53,7 @@ function App() {
       <button onClick={getRequest}>Get request</button>
 
       <Routes>
+        {/* <Route path="/" element={<HomePage />} /> */}
         <Route path="/" element={<Properties />}></Route>
         <Route path="/PropertiesToRent" element={<Properties />}></Route>
       </Routes>

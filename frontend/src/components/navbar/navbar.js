@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import styles from "./navbar.module.css";
 import ContactUsWhite from "../buttons/contactuswhite";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
   return (
@@ -24,12 +23,30 @@ export default function NavBar() {
         </div>
       </div>
       <div className={styles.lowerheader}>
-        <ul>
-          <li>HOME</li>
-          <li>FOR OWNERS</li>
-          <li>FOR TENANTS</li>
-          <li>ABOUT US</li>
-        </ul>
+        <div className={styles.dropdown}>
+          <button>HOME</button>
+          <button>FOR OWNERS</button>
+          <div className={styles.dropdown_owners}>
+            <button>Why Choose Us?</button>
+            <button>Our Services</button>
+            <button>Blog</button>
+            <button>Owner Login</button>
+          </div>
+          <button>FOR TENANTS</button>
+          <div className={styles.dropdown_tenant}>
+            <button>Renting With Us</button>
+            <button>Properties to Rent</button>
+            <button>Blog</button>
+            <button>Tenancy Application</button>
+          </div>
+          <button>ABOUT US</button>
+          <div className={styles.dropdown_aboutus}>
+            <button>Our Services</button>
+            <button>Meet the Team</button>
+            <button>Careers</button>
+            <button>Gallery</button>
+          </div>
+        </div>
       </div>
     </nav>
   );

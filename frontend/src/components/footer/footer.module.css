@@ -1,9 +1,7 @@
 .outermostcontainer{
     width: 100vw;
     height: 45rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
     overflow: hidden;
 }
 

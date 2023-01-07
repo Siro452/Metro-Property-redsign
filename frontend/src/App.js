@@ -52,9 +52,10 @@ function App() {
       <div>{greetingToDisplay === false ? "" : greetingToDisplay}</div>
       <button onClick={getRequest}>Get request</button>
 
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes> */}
+      <Routes>
+        <Route path="/" element={<Properties />}></Route>
+        <Route path="/PropertiesToRent" element={<Properties />}></Route>
+      </Routes>
     </div>
   );
 }

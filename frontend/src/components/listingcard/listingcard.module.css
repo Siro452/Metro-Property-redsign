@@ -1,0 +1,12 @@
+.listingcard {
+  width: 360px;
+  height: 450px;
+  background: #ffffff;
+  box-shadow: 2px 4px 4px rgba(104, 105, 99, 0.5);
+  border-radius: 6.42px;
+}
+
+.houseimg {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -14,9 +14,9 @@ export default function NavBar() {
 
         <div>
           <div className={styles.socialmedia}>
-            <FontAwesomeIcon icon="fa-brands fa-facebook" />
+            {/* <FontAwesomeIcon icon="fa-brands fa-facebook" />
             <FontAwesomeIcon icon="fa-brands fa-instagram" />
-            <FontAwesomeIcon icon="fa-brands fa-linkedin" />
+            <FontAwesomeIcon icon="fa-brands fa-linkedin" /> */}
           </div>
           <div class="line-2"></div>
           <ContactUsWhite />

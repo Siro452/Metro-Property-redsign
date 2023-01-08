@@ -11,13 +11,6 @@
   text-align: center;
 }
 
-.line {
-  border: 3px solid #000000;
-  background-color: #000000;
-  width: 60%;
-  margin: 30px 0 15px 0;
-}
-
 .servicecontainer h3 {
   font-family: "DM Serif Display";
   font-style: normal;

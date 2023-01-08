@@ -18,7 +18,7 @@ export default function NavBar() {
             <FontAwesomeIcon icon="fa-brands fa-instagram" />
             <FontAwesomeIcon icon="fa-brands fa-linkedin" />
           </div>
-          <div class="Line-2"></div>
+          <div class="line-2"></div>
           <ContactUsWhite />
         </div>
       </div>

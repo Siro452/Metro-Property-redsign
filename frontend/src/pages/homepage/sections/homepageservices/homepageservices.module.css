@@ -1,0 +1,81 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.line {
+  border: 3px solid #000000;
+  background-color: #000000;
+  width: 60%;
+  margin: 30px 0 15px 0;
+}
+
+.servicecontainer h3 {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #1e2640;
+  margin: 0 20px 0;
+}
+
+.servicecontainer p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #889099;
+
+  width: 60%;
+}
+
+.cardcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 26px;
+}
+
+.servicecard {
+  display: flex;
+  height: 400px;
+  width: 300px;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 24px 68px 0 rgba(0, 0, 0, 0.08);
+  font-family: "Inter";
+  font-style: normal;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: 0 2%;
+}
+
+.servicecard h5 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+  letter-spacing: 0.002em;
+  color: #363a3d;
+  width: 240px;
+}
+
+.servicecard p {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  line-height: 15px;
+  color: #889099;
+  width: 240px;
+}

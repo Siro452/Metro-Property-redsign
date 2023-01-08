@@ -1,13 +1,94 @@
 .outermostcontainer{
     display: flex;
+    position: relative;
     width: 85%;
+    max-width: 1500px;
     height: 26rem;
     margin-bottom: 2.8rem;
     border-radius: .75rem;
+    overflow: hidden;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all .5s;
+    /* background-color: rgb(203, 203, 203); */
+}
 
-    background-color: rgb(203, 203, 203);
+.outermostcontainer:hover{
+    scale: 1.025;
+    cursor: pointer;
 }
 
 .outermostcontainer img{
     width: 100%;
+    object-fit: cover;
+    /* height: 100%; */
+}
+
+.listingdetailscontainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28rem; 
+    height: 9rem;
+    padding: .1rem 1.2rem;
+    padding: 1.5rem 3rem;
+    border-radius: 4px 0 0 0;
+    background-color: white; 
+    color: rgba(74, 96, 161, 1);
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+
+    /* border: 2px solid magenta; */
+}
+
+.listingtitle{
+    /* position: absolute; */
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: left;
+
+    /* outline: 2px solid pink; */
+}
+
+
+.priceperweek{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  
+    /* outline: 2px solid rgb(196, 113, 127); */
+}
+
+.propertyfeaturescontainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    /* outline: 2px solid orangered; */
+}
+
+.propertyfeatures{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 2rem;
+
+    /* outline: 2px solid blue; */
+}
+
+.propertyfeatures:first-child {
+    border-right: 2px solid rgb(216, 211, 211, 0.5);
+}
+
+.propertyfeatures:last-child {
+    border-left: 2px solid rgb(216, 211, 211, 0.5);
+}
+
+.propertyfeatures img{
+    height: 1.25rem;
 }

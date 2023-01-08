@@ -8,12 +8,9 @@
   align-items: flex-start;
 }
 
-.Line-2 {
-  width: 1px;
-  height: 67px;
-  flex-grow: 0;
-  margin: 0 40.5px 0 26.5px;
-  transform: rotate(-270deg);
+.line-2 {
+  border: 1px solid #100c0c;
+  transform: rotate(90deg);
   background-color: #100c0c;
 }
 

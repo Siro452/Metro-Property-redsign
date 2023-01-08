@@ -6,7 +6,7 @@ import ListingCard from "../../../../components/listingcard/listingcard";
 export default function FeaturedRentals() {
   return (
     <div>
-      <div>
+      <div className={styles.featuredheader}>
         <Line />
         <h3>Featured Rentals</h3>
         <p>
@@ -14,9 +14,12 @@ export default function FeaturedRentals() {
           feel fully at home in and that you will want to stay in for a long
           time.
         </p>
+        <SearchButtonRed buttonTitle={"Search All"} />
       </div>
-      <SearchButtonRed buttonTitle={"Search All"} />
+
       <div className={styles.featuredcontainer}>
+        <ListingCard />
+        <ListingCard />
         <ListingCard />
       </div>
     </div>

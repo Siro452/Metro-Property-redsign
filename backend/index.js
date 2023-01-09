@@ -5,6 +5,7 @@ const cors = require('cors')
 const http = require("http"); 
 
 const Greeting = require("./greeting")
+const Rental = require("./rental")
 
 
 //========================= MIDDLEWARE ==================================//
@@ -58,19 +59,39 @@ app.post('/greeting', async(req, res) => {
 })
 
 
+//ENPOINTS FOR METRO SITE ===================================//
+
+//return featured listings
+app.get('/featuredListing', async(req, res) => {
+    try{
+        const featuredListings = await Rental.where("featuredinfo.featuredproperty").equals(true).limit(3).select("image").select("address").select("featuredinfo").select("cost")
+        res.send(featuredListings)
+    }catch (e) {
+        console.log(e.message)
+    }
+})
 
 
+
+
+
+
+
+
+
+
+
+
+//testing rental collection
 // run()
-// async function run(){
-//     try {
-//         const banana = await Greeting.findById("63a397d1c18e52a43d530b10")
-//         console.log(banana)
-//     } catch (e) {
-//         console.log(e.message)
-//     }
-// }
-
-
+async function run() {
+    try{
+        const featuredListings = await Rental.where("featuredinfo.bedrooms").equals(5).limit(5).select("title")
+        console.log(featuredListings)
+    }catch (e) {
+        console.log(e.message)
+    }
+}
 
 
 

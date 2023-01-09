@@ -1,9 +1,9 @@
 .searchbuttonred {
-  width: 270px;
+  width: fit-content;
   height: 60px;
   left: 587px;
   top: 474px;
-
+  padding: 10px 20px;
   background: #e53436;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -41,11 +41,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
   outline: none;
   border: none;
   color: white;
-  background-color: rgba(228, 53, 60, 1);
+  background: #e53436;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;

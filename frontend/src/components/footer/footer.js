@@ -62,7 +62,7 @@ export default function footer() {
         </div>
       </div>
 
-      <img classname={styles.housephoto} src={housePhoto} alt="modern house" />
+      <img className={styles.housephoto} src={housePhoto} alt="modern house" />
       <div className={styles.photogradient}></div>
     </div>
   );

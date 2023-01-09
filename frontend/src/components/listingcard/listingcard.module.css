@@ -46,9 +46,14 @@
   align-items: center;
 }
 
-.label {
+.housefeatures img {
+  width: 22px;
+}
+
+.housefeatures label {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: #6d737a;
+  margin: 0 7px;
 }

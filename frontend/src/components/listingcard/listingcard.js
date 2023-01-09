@@ -1,7 +1,7 @@
 import styles from "./listingcard.module.css";
-import bedroom from "../../assets/bedroom.png";
-import bathroom from "../../assets/bathroom.svg";
-import garage from "../../assets/car.svg";
+import bedroom from "../../assets/bedgray.svg";
+import bathroom from "../../assets/bathtubgray.svg";
+import garage from "../../assets/cargray.svg";
 import placeHolder from "../../assets/Rectangle 21.png";
 
 export default function ListingCard() {

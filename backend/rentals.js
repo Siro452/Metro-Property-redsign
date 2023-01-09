@@ -26,12 +26,7 @@ const rentalSchema = new mongoose.Schema({
         propertyinfo: furnished blah blah blah,
         maindescription: paragraph of text etc
     }
-     {
-       
-    }
-     {
-        
-    }
+     
   },
 });
 

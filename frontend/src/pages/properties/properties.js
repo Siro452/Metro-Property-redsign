@@ -7,9 +7,7 @@ import Footer from "../../components/footer/footer"
 import FeaturedRentalCardLrg from "../../components/featuredrentalcardlrg/featuredrentalcardlrg"
 import SearchContainer from "../../components/searchcontainer/searchcontainer"
 
-import featuredlisting1 from "../../assets/featuredlisting1.png"
-import featuredlisting2 from "../../assets/featuredlisting2.png"
-import featuredlisting3 from "../../assets/featuredlisting3.png"
+//Image imports-------------------
 import pagination from "../../assets/paginationimage.svg"
 import background from "../../assets/searchbackgroundimage.png"
 

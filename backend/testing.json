@@ -1,0 +1,145 @@
+
+{"template form":
+{
+    "title": "String",
+    "image": {
+        "featuredimg": "String",
+        "galleryimg": "String"
+    },
+    "address": {
+        "streetaddress": "String",
+        "city": "String",
+        "district": "String",
+        "suburb": "String",
+        "postcode": 0
+    },
+    "featuredinfo": {
+        "bedrooms": 0,
+        "bathrooms": 0,
+        "carparks": 0,
+        "petfriendly": false, 
+        "furnished": false,
+        "publictransport": 0,
+        "cyclepath": 0,
+        "supermarket": 0, 
+        "gym": 0,
+        "park": 0,
+        "featuredproperty": false
+    },
+    "propertyinfo": "String"
+},
+
+
+
+"listing 1":
+
+
+{"_id":{"$oid":"63bb7ec3759508f028a1fecb"},
+  "title": "Entertainers Paradise with Million-Dollar Views",
+    "image": {
+        "featuredimg": "https://i.postimg.cc/pX6Wc5yK/featuredlisting3large.png",
+        "galleryimg": "https://i.postimg.cc/zfS3QDs5/featuredlisting1small.png"
+    },
+    "address": {
+        "streetaddress": "60, Hackett Street, Saint Marys Bay, Auckland",
+        "city": "auckland",
+        "district": "auckland city",
+        "suburb": "st marys bay",
+        "postcode": 1011
+    },
+    "featuredinfo": {
+        "bedrooms": 5,
+        "bathrooms": 3,
+        "carparks": 2,
+        "petfriendly": true, 
+        "furnished": false,
+        "publictransport": 5,
+        "cyclepath": 1.2,
+        "supermarket": 1.4, 
+        "gym": 2,
+        "park": 2.2,
+        "featuredproperty": true
+    },
+    "propertyinfo": "locations. On a leafy private cul-de-sac and sporting uninterrupted views across the Harbour and back towards the Sky Tower. Expansive open-plan living and dining is anchored by an immaculate kitchen and even a wine cellar. Entertaining is a dream atop American oak flooring with a gas fireplace to gather around in winter, and come summer, you will love the flow straight out to paved al fresco living that includes an outdoor fireplace and established tropical planting for ambience and privacy."
+
+},
+
+
+
+
+"listing 2":
+
+{
+    "title": "A cozy house at a nice location",
+    "image": {
+        "featuredimg": "https://i.postimg.cc/NGbfTzcJ/featuredlisting2large.png",
+        "galleryimg": "https://i.postimg.cc/nLtCT9w0/featuredlisting2small.png"
+    },
+    "address": {
+        "streetaddress": "15D, Chad Road, St Heliers, Auckland 1540",
+        "city": "auckland",
+        "district": "auckland city",
+        "suburb": "st heliers",
+        "postcode": 1540
+    },
+    "featuredinfo": {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "carparks": 2,
+        "petfriendly": true, 
+        "furnished": true,
+        "publictransport": 4,
+        "cyclepath": 3.7,
+        "supermarket": 2.6, 
+        "gym": 3.1,
+        "park": 1.2,
+        "featuredproperty": true
+    },
+    "propertyinfo": "Open plan living leads on to good sized fenced deck and private garden. The modern kitchen, featuring plenty of cupboard space, opens to the generous dining and lounge area. A separate, good sized Laundry has easy access to an outside drying area. The main bathroom has a bath plus shower, acting as a separate family or guest facility. The second floor features the Master bedroom and ensuite, and 2 further good sized bedrooms, all with built in wardrobes. Newly painted throughout. Secure garage with internal access and off street parking for one car. Excelent public transport close by. Pets negotiable. This property is available now and would suit small family or similar."
+},
+
+
+
+
+"listing 3":
+
+
+{
+    "title": "Dazzling Manhattan City Scape",
+    "image": {
+        "featuredimg": "https://i.postimg.cc/g2LYCc6Q/featuredlisting1large.png",
+        "galleryimg": "https://i.postimg.cc/Sx9nWfVn/featuredlisting3small.png"
+    },
+    "address": {
+        "streetaddress": "172 Customs Street, City Centre, Auckland",
+        "city": "auckland",
+        "district": "auckland city",
+        "suburb": "city centre",
+        "postcode": 1030
+    },
+    "featuredinfo": {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "carparks": 2,
+        "petfriendly": false, 
+        "furnished": false,
+        "publictransport": 1,
+        "cyclepath": 1.5,
+        "supermarket": 0.7, 
+        "gym": 0.5,
+        "park": 1.1,
+        "featuredproperty": true
+    },
+    "propertyinfo": "Live life in the heart of the Viaduct and make this newly renovated apartment your new home. With east and west aspects you will wake up to the sunrise and end your evenings entertaining on your large west facing entertainers deck taking in the sunsets. This homes presentation is immaculate and finished to a high standard, with a fresh kitchen paired with new appliances and stunning flooring, new roller blinds on the outdoor deck & refreshed bathrooms all the hard work has been done with separate dining looking over a citrus grove and parklike gardens. This home is a unique find for an apartment having all the extras, with two carparks, one standard locker plus a 12 sq m locker or the perfect storage for all the big toys! Plus having a third flexi room perfect for guests or a home office with excellent daylight and afternoon sun. Part of the ever so popular 'Parc' complex a resort like lifestyle, you will enjoy the shared swimming pool, a well-resourced gym, spa and sauna, and acres of blooming parkland within this pet-friendly complex. Centrally located in the viaduct, an easy stroll to the ferry terminals, Britomart, metro supermarkets and central green spaces like Silo and Wynyard parks."
+}
+
+
+
+}
+
+
+
+
+
+
+

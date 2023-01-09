@@ -58,4 +58,4 @@ services:
 
 # declare the volumes name that our app is using.
 volumes:
-  mongodb: {}
+  data:

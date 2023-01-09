@@ -3,6 +3,9 @@
     height: 45rem;
     position: relative;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 .footercontent{
@@ -136,7 +139,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 70%;
+    height: 50%;
     background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(0, 0, 0, 0.9));
     z-index: 1;
 }

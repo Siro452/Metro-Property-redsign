@@ -11,7 +11,7 @@ import ContactUsRed from "../buttons/contactusred";
 
 export default function footer() {
   return (
-    <div className={styles.outermostcontainer}>
+    <div className={styles.outermostcontainer} style={{ backgroundImage: `url(${housePhoto})` }}>
       <div className={styles.footercontent}>
         <div className={styles.footerblurb}>
           Metro NZ Property Management has offices conveniently located in
@@ -62,7 +62,7 @@ export default function footer() {
         </div>
       </div>
 
-      <img className={styles.housephoto} src={housePhoto} alt="modern house" />
+      {/* <img className={styles.housephoto} src={housePhoto} alt="modern house" /> */}
       <div className={styles.photogradient}></div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./properties.module.css";
 
 //Component imports---------------
@@ -13,9 +13,23 @@ import featuredlisting3 from "../../assets/featuredlisting3.png"
 import pagination from "../../assets/paginationimage.svg"
 import background from "../../assets/searchbackgroundimage.png"
 
-export default function properties() {
+
+export default function Properties() {
+
+  const [featuredListingData, setFeaturedListingData] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:8080/featuredListing")
+    .then((res) => res.json())
+    .then((resultsData) => {
+      //Testing logs----------
+      console.log(resultsData)
+      setFeaturedListingData(resultsData)
+    })
+  },[])
+
   return (
-    <div className={styles.outermostcontainer}>properties
+    <div className={styles.outermostcontainer}>
         <Navbar />
         <div style={{ backgroundImage: `url(${background})` }} className={styles.bannerbackground} >
           <h2>Search Our Properties</h2>
@@ -24,9 +38,12 @@ export default function properties() {
         
         <section className={styles.featuredrentalssection}>
           <div className={styles.featuredrentalstitle}>Featured Rentals</div>
-          <FeaturedRentalCardLrg featuredlisting1={featuredlisting1}/>
-          <FeaturedRentalCardLrg featuredlisting1={featuredlisting2}/>
-          <FeaturedRentalCardLrg featuredlisting1={featuredlisting3}/>
+          {featuredListingData && featuredListingData.map((listing, index) => {
+              
+            return(
+              <FeaturedRentalCardLrg key={index} image={listing.image.featuredimg} address={listing.address.streetaddress} cost={listing.cost} carparks={listing.featuredinfo.carparks} bathrooms={listing.featuredinfo.bathrooms} bedrooms={listing.featuredinfo.bedrooms}/>
+            )
+          })}
           <img src={pagination} alt="pages icons" />
         
         </section>

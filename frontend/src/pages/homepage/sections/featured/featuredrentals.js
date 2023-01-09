@@ -14,9 +14,10 @@ export default function FeaturedRentals() {
           feel fully at home in and that you will want to stay in for a long
           time.
         </p>
-        <SearchButtonRed buttonTitle={"Search All"} />
+        <div className={styles.subsection}>
+          <SearchButtonRed buttonTitle={"Search All"} />
+        </div>
       </div>
-
       <div className={styles.featuredcontainer}>
         <ListingCard />
         <ListingCard />

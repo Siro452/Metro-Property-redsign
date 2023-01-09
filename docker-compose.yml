@@ -19,7 +19,8 @@ services:
     # our environment variable
     environment:
       MONGO_INITDB_ROOT_USERNAME: "${MONGO_USERNAME}"
-      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_PASSWORD}"
+      MONGO_INITDB_ROOT_PASSWORD:
+        "${MONGO_PASSWORD}"
 
         # name is optional for our backend
   backend:
@@ -44,16 +45,17 @@ services:
     ports:
       - "3000:3000"
     # add bind mount volume to keep have updated source code
-    # volumes:
-    #   - ./task_management_client/src:/app/src
+    volumes:
+      - ./frontend:/src/app
     # allow interactive mode
     stdin_open: true
-    tty: true
+    tty:
+      true
 
-        # it will start our frontend container once backend-container is  up and running.
+      # it will start our frontend container once backend-container is  up and running.
     depends_on:
       - backend
 
 # declare the volumes name that our app is using.
 volumes:
-  data:
+  mongodb: {}

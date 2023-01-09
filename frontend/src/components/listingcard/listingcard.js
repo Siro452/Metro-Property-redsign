@@ -17,7 +17,8 @@ export default function ListingCard() {
           <label>1</label>
           <img src={bathroom} alt="bathroomicon"></img>
           <label>1</label>
-          <img src={garage} alt="caricon"></img> <label>1</label>
+          <img src={garage} alt="caricon"></img>
+          <label>1</label>
         </div>
       </div>
     </div>

@@ -2,11 +2,11 @@ import styles from "./listingcard.module.css";
 import bedroom from "../../assets/bedgray.svg";
 import bathroom from "../../assets/bathtubgray.svg";
 import garage from "../../assets/cargray.svg";
-import placeHolder from "../../assets/Rectangle 21.png";
+import { Link } from "react-router-dom";
 
 export default function ListingCard(props) {
   return (
-    <div className={styles.listingcard}>
+    <Link className={styles.listingcard}>
       <img className={styles.houseimg} src={props.image} alt="houseimg"></img>
       <div className={styles.listingcontent}>
         <h4>{props.address}</h4>
@@ -21,6 +21,6 @@ export default function ListingCard(props) {
           <label>{props.carparks}</label>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

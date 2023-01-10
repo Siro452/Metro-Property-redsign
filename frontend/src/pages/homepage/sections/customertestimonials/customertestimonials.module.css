@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.header h3 {
+  font-family: "DM Serif Display";
+  font-size: 40px;
+  line-height: 48px;
+  color: #1e2640;
+  margin: 0;
+}
+
+.header p {
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 28px;
+  color: #889099;
+  margin: 0;
+  margin-bottom: 3%;
+}
+
+.testimonialscontainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 3rem;
+  justify-content: center;
+}
+
+.testimonialcard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  margin: 0 20px;
+  width: 40%;
+  max-height: 30%;
+}
+
+.testimonialcard img {
+  width: 275px;
+}
+
+.testimonialcard p {
+  margin: 0;
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 28px;
+  color: #010101;
+  margin: 0 2rem;
+}

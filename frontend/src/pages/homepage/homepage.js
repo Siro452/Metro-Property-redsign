@@ -5,6 +5,7 @@ import HomePageServices from "./sections/homepageservices/homepageservices";
 import FeaturedRentals from "./sections/featured/featuredrentals";
 import RentalMap from "./sections/rentalmap/rentalmap";
 import MetroVideo from "./sections/metrovideo/metrovideo";
+import CustomerTestimonials from "./sections/customertestimonials/customertestimonials";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <FeaturedRentals />
       <RentalMap />
       <MetroVideo />
+      <CustomerTestimonials />
       <Footer></Footer>
     </div>
   );

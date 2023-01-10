@@ -9,4 +9,9 @@
   line-height: 48px;
   text-align: center;
   color: #1e2640;
+  padding-bottom: 4%;
+}
+
+.vidcontainer h3 {
+  margin-top: 0;
 }

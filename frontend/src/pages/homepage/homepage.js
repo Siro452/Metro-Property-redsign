@@ -6,6 +6,7 @@ import FeaturedRentals from "./sections/featured/featuredrentals";
 import RentalMap from "./sections/rentalmap/rentalmap";
 import MetroVideo from "./sections/metrovideo/metrovideo";
 import CustomerTestimonials from "./sections/customertestimonials/customertestimonials";
+import Awards from "./sections/awards/awards";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <RentalMap />
       <MetroVideo />
       <CustomerTestimonials />
+      <Awards />
       <Footer></Footer>
     </div>
   );

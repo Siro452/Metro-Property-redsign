@@ -16,7 +16,7 @@ export default function ListingCard(props) {
           <img src={bedroom} alt="bedroomicon"></img>
           <label>{props.bedrooms}</label>
           <img src={bathroom} alt="bathroomicon"></img>
-          <label>{props.bathroom}</label>
+          <label>{props.bathrooms}</label>
           <img src={garage} alt="caricon"></img>
           <label>{props.carparks}</label>
         </div>

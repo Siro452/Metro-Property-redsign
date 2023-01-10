@@ -10,6 +10,11 @@
   flex-direction: column;
   align-content: center;
   margin: 5% 2%;
+  text-decoration: none;
+}
+
+.listingcard:hover {
+  box-shadow: 2px 4px 4px #a95253;
 }
 
 .houseimg {
@@ -31,6 +36,7 @@
   font-weight: 500;
   font-size: 21.4141px;
   line-height: 30px;
+  color: #363a3d;
 }
 
 .listingcard h5 {

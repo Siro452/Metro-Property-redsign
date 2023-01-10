@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   font-style: normal;
   text-align: center;
 }
@@ -28,8 +27,10 @@
 
 .subsection {
   position: absolute;
-  right: 15rem;
-  top: 1280px;
+  /* right: 15rem;
+  top: 1280px; */
+  top: 80rem;
+  left: 75%;
 }
 
 .subsection SearchButtonRed {

@@ -19,8 +19,7 @@
 .contactuswhite {
   width: fit-content;
   height: 48px;
-  display: flex;
-  align-items: flex-end;
+  justify-items: center;
   text-align: center;
   color: #110f0f;
   padding: 12px 24px;

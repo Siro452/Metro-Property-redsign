@@ -14,11 +14,13 @@ export default function CustomerTestimonials() {
       <div className={styles.testimonialscontainer}>
         <TestimonialCard
           customerimg={customer1}
+          imgDesc="girl who looks like Ashley from The Boys"
           date="20 Sep, 2022"
           testimonial="Hayley & team have been really good to work with, always super responsive and we've had no issues over the time they managed an apartment we let in Auckland city. Easy to work with and enjoyable experience overall :)"
         />
         <TestimonialCard
           customerimg={customer2}
+          imgDesc="Girl who holds ice cream"
           date="20 Sep, 2022"
           testimonial="Really positive experience renting with MetroNZ. John Baatjes was amazing, even moved us in on Christmas Eve and gave us lots of help and advice about the local area. Quick responses with emails and a really genuine person. Thank you!"
         />

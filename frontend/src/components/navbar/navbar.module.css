@@ -2,46 +2,107 @@
   background-color: #fff;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .metrologo {
-  align-items: flex-start;
+  margin-right: auto;
 }
 
-.line-2 {
-  border: 1px solid #100c0c;
-  transform: rotate(90deg);
-  background-color: #100c0c;
+.socialmediacontainer {
+  display: flex;
+  align-items: center;
+  margin-right: 2%;
 }
+
+.socialmedia {
+  display: flex;
+  image-rendering: auto;
+  align-items: flex-end;
+  padding-right: 20px;
+  margin-right: 30px;
+  border-right: solid 2px #100c0c;
+  height: 60px;
+  align-items: center;
+}
+
+.socialmedia img {
+  margin-right: 10px;
+}
+
+/* lower header css */
 
 .lowerheader {
   background-color: #e53436;
-  font-family: Inter;
-  font-size: 22px;
-  font-weight: bold;
-  font-stretch: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
   font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  color: #ffffff;
+  height: 75px;
+}
+
+#home {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 2%;
+}
+.subnav {
+  background-color: #e53436;
+  border-color: #e53436;
+  margin: 0 2%;
+}
+
+.subnavbtn {
+  background-color: #e53436;
+  border-color: #e53436;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  color: #ffffff;
   text-align: center;
-  color: #fff;
 }
 
-.dropdown {
-  position: relative;
+.subnavbtn:hover,
+.subnavbtn:not(:hover),
+.subnavbtn:active,
+.subnavbtn:after {
+  background-color: #e53436 !important;
+  border-color: #e53436 !important;
+  content: none;
 }
 
-.dropdown_owners,
-.dropdown_tenant,
-.dropdown_aboutus {
-  display: none;
-  position: absolute;
-  background: #ffffff;
-  z-index: 1;
+.subnav_content {
+  background-color: #ffffff;
+  border-radius: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin-top: 18px;
+  text-align: center;
 }
 
-.dropdown:hover .dropdown_owners,
-.dropdown_tenant,
-.dropdown_aboutus {
-  display: block;
+.subnav_content_item {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.subnav_content_item:hover {
+  background: #f1cbcc;
 }

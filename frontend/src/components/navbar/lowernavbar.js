@@ -48,7 +48,11 @@ export default function LowerNavBar() {
           <Dropdown.Item className={styles.subnav_content_item} eventKey="1">
             Renting With Us
           </Dropdown.Item>
-          <Dropdown.Item className={styles.subnav_content_item} eventKey="2">
+          <Dropdown.Item
+            href="/propertiestorent"
+            className={styles.subnav_content_item}
+            eventKey="2"
+          >
             Properties to Rent
           </Dropdown.Item>
           <Dropdown.Item className={styles.subnav_content_item} eventKey="3">

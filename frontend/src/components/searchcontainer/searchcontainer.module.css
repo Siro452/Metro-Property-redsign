@@ -124,22 +124,25 @@
 }
 
 .checkboxcolumn input{
-    outline: 2px solid rgba(203, 210, 224, 1);
+    /* outline: 2px solid rgba(203, 210, 224, 1);
     height: 1.25rem;
     width: 1.25rem;
     
-    /* border: 2px solid rgba(203, 210, 224, 1); */
+    
     border-radius: .2rem; 
     -moz-appearance:none;
     -webkit-appearance:none;
-    -o-appearance:none;
+    -o-appearance:none; */
+
+    /* border: 2px solid rgba(203, 210, 224, 1); */
 }
 
-.checkboxcolumn input:focus{
+/* .checkboxcolumn input:focus{
     background-color: rgb(233, 82, 87);
-}
+} */
 
 .checkboxcolumn span{
     display: flex;
     gap: .5rem;
 }
+

@@ -1,6 +1,7 @@
 
 {"template form":
 {
+    "_id":{"$oid":"replace this"},
     "title": "String",
     "image": {
         "featuredimg": "String",
@@ -24,9 +25,11 @@
         "supermarket": 0, 
         "gym": 0,
         "park": 0,
-        "featuredproperty": false
+        "featuredproperty": false,
+        "housetype": "String"
     },
-    "propertyinfo": "String"
+    "propertyinfo": "String",
+    "cost": 0
 },
 
 

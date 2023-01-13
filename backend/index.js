@@ -36,7 +36,7 @@ mongoose.connect(MONGO_URL, {retryWrites: true, w: 'majority'})
 
 
 
-//========================= ENDPOINTS ==================================//
+//========================= ENDPOINTS  FOR MISSION 5a ==================================//
 app.get('/', (req, res) =>{
     res.send({message: `There is a connection on port ${PORT} 🐳`})
 })
@@ -59,7 +59,7 @@ app.post('/greeting', async(req, res) => {
 })
 
 
-//ENPOINTS FOR METRO SITE ===================================//
+//========================= ENPOINTS FOR METRO SITE ===================================//
 
 //return featured listings
 app.get('/featuredListing', async(req, res) => {
@@ -71,27 +71,30 @@ app.get('/featuredListing', async(req, res) => {
     }
 })
 
+//return property search results
+app.get("/searchfilter", async(req, res) => {
+    
+    //Shallow copying to modify the query
+    let reqQuery = {...req.query}
 
-
-
-
-
-
-
-
-
-
-
-//testing rental collection
-// run()
-async function run() {
+    //Turn the request into a json string so that $ symbols can be added with the replace function
+    let queryStr = JSON.stringify(reqQuery)
+    
+    // Some regex to add the $ infront of any greater than or less than queries
+    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, (match) => `$${match}`)
+    
+    // Parse the JSON to return it to an object for the .find request
+    let parsedQueryStr = JSON.parse(queryStr)
+    
     try{
-        const featuredListings = await Rental.where("featuredinfo.bedrooms").equals(5).limit(5).select("title")
-        console.log(featuredListings)
-    }catch (e) {
+        const returnedResults = await Rental.find(parsedQueryStr)
+        
+         res.status(200).send(returnedResults)
+        
+    }catch(e){
         console.log(e.message)
     }
-}
+})
 
 
 
@@ -100,3 +103,5 @@ const PORT = process.env.PORT || 8002
 app.listen(PORT, () => {
     console.log(`listening on PORT ${PORT}`)
 })
+
+

@@ -1,16 +1,41 @@
 .outermostcontainer{
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    margin-bottom: 3rem;
 
-    border: 5px solid magenta;
+    /* border: 5px solid rgb(255, 2, 255); */
 }
 
 .mapcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
-    min-height: 10rem;
+    min-height: 16rem;
     width: 100%;
+    font-family: Inter, sans-serif;
+    font-size: 1.425rem;
+
+    /* border: 5px solid rgb(34, 149, 216); */
+}
+
+.mapheader{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 55rem;
+    width: fit-content;
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    
+    /* border: 2px solid red; */
+}
+
+.mapheader span{
+    display: flex;
 }
 
 .numoflistings{
@@ -21,6 +46,12 @@
     color: rgb(0, 0, 0);
 }
 
+.mapcontainer img{
+    width: 56vw;
+    width: 81rem;
+    margin-bottom: 5rem;
+}
+
 .selectcontainer{
     display: flex;
     justify-content: flex-end;
@@ -29,13 +60,10 @@
     max-width: 1500px;
     margin-top: 2rem;
 
-
-/* border: 2px solid green; */
+    /* border: 2px solid green; */
 }
 
 .sortbox{
-    /* align-self: flex-end;
-    justify-self: flex-end; */
     font-family: Inter, sans-serif;
     font-size: 1rem;
     padding: .7em 1.5em;
@@ -50,12 +78,11 @@
     cursor: pointer;
     
     /* appearance: none; */
-    
 }
 
 .sortbox:focus{
     outline: none;
-    border: 2px solid rgba(229, 52, 54, .7);
+    border: 2px solid rgba(0, 0, 0, 0.7);
 }
 
 .gridcontainer{
@@ -71,8 +98,6 @@
     align-items: flex-start;
     align-content: flex-start;
     margin-bottom: 2rem;
-    /* scale: 1.2; */
-    ;
 
     /* border: 2px solid red; */
 }
@@ -81,6 +106,14 @@
     .gridcontainer {
       grid-template-columns: 1fr 1fr;
     }
+
+    .mapheader{
+        gap: 31rem;
+    }
+
+    .mapcontainer img{
+        width: 70vw;
+    }
   }
 
 
@@ -88,6 +121,12 @@
     .gridcontainer {
       grid-template-columns: 1fr;
     }
+
+    .mapheader{
+        gap: 7rem;
+    }
+
+    .mapcontainer img{
+        width: 75vw;
+    }
   }
-
-

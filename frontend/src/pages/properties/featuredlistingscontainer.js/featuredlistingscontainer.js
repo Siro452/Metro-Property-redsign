@@ -12,13 +12,7 @@ export default function FeaturedListingsContainer(props) {
 
   return (
     <div className={styles.featuredrentalssection}>
-      {props.noSearchResults && (
-        <div className={styles.noresultsreturned}>
-          <img src={magnifyingglass} />{" "}
-          <p>Oops! No properties match with your searched criteria! Sorry!</p>
-        </div>
-      )}
-
+      
       {props.featuredListingsVisible && <div className={styles.featuredrentalstitle}>Featured Rentals</div>}
 
       {props.featuredListingsVisible && 

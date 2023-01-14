@@ -4,17 +4,15 @@ import styles from "./properties.module.css";
 //Component imports---------------
 import Navbar from "../../components/navbar/navbar"
 import Footer from "../../components/footer/footer"
-import FeaturedRentalCardLrg from "../../components/featuredrentalcardlrg/featuredrentalcardlrg"
 import SearchContainer from "../../components/searchcontainer/searchcontainer"
 import ListingsContainer from './listingscontainer/listingscontainer';
 import FeaturedListingsContainer from './featuredlistingscontainer.js/featuredlistingscontainer';
+import NoSearchResults from './nosearchresults/nosearchresults';
 
 
 //Image imports-------------------
 import pagination from "../../assets/paginationimage.svg"
 import background from "../../assets/searchbackgroundimage.png"
-import magred from "../../assets/searchresultsred.svg"
-import magblue from "../../assets/searchresultsblue.svg"
 
 
 export default function Properties() {
@@ -83,6 +81,7 @@ export default function Properties() {
         console.log("no results returned")
         setTimeout(() => {
           setNoSearchResults(true);
+          setFeaturedListingsVisible(true);
         }, "500")
         
         console.log(noSearchResults)
@@ -107,31 +106,24 @@ export default function Properties() {
   return (
     <div className={styles.outermostcontainer}>
         <Navbar />
+
         <div style={{ backgroundImage: `url(${background})` }} className={styles.bannerbackground} >
           <h2>Search Our Properties</h2>
           <SearchContainer query={query} setQuery={setQuery} handleSearchSubmit={handleSearchSubmit} handleQuery={handleQuery} handleQueryCheckbox={handleQueryCheckbox}/>
         </div>
 
-        
-        <section className={styles.featuredrentalssection}>
-          {noSearchResults && <div className={styles.noresultsreturned}><img src={magblue} /> <p>Oops! No properties match with your searched criteria! Sorry!</p></div>}
-
-          <div className={styles.featuredrentalstitle}>Featured Rentals</div>
-          {featuredListingsVisible && featuredListingData.map((listing, index) => {
-              
-            return(
-              <FeaturedRentalCardLrg key={index} image={listing.image.featuredimg} address={listing.address.streetaddress} cost={listing.cost} carparks={listing.featuredinfo.carparks} bathrooms={listing.featuredinfo.bathrooms} bedrooms={listing.featuredinfo.bedrooms}/>
-            )
-          })}
-          <img src={pagination} alt="pages icons" />
-
-          <ListingsContainer limitedResults={limitedResults} noSearchResults={noSearchResults} searchData={searchData} />
-        
+        <div className={styles.containerforlistings}>
+          {!featuredListingsVisible && <ListingsContainer limitedResults={limitedResults} noSearchResults={noSearchResults} searchData={searchData} />}
           
-        <FeaturedListingsContainer noSearchResults={noSearchResults} featuredListingsVisible={featuredListingsVisible} featuredListingData={featuredListingData} />
-        </section>
-
-
+        
+          <NoSearchResults noSearchResults={noSearchResults} />
+          <FeaturedListingsContainer noSearchResults={noSearchResults} featuredListingsVisible={featuredListingsVisible} featuredListingData={featuredListingData} />
+        
+        </div>
+      
+       
+        
+    
         <Footer /> 
 
       

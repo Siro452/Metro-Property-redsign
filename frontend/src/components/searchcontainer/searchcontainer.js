@@ -110,29 +110,29 @@ export default function SearchContainer(props) {
             <div className={styles.checkboxes}>
                 <div className={styles.checkboxcolumn}>
 
-                    <span><input type="checkbox" id="close to supermarket" name="featuredinfo.supermarket[lte]" value="1" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="close to supermarket" name="featuredinfo.supermarket[lte]" value="1" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="close to supermarket"> Close to Supermarkets</label></span>
-                    <span><input type="checkbox" id="close to gym" name="featuredinfo.gym[lte]" value="1.5" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="close to gym" name="featuredinfo.gym[lte]" value="1.5" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="close to gym"> Close to Gym</label></span>
-                    <span><input type="checkbox" id="close to park" name="featuredinfo.park" value="1" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="close to park" name="featuredinfo.park" value="1" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="close to park"> Close to Parks</label></span>
                     
                 </div>
 
                 <div className={styles.checkboxcolumn}>
 
-                    <span><input type="checkbox" id="close to cycle path" name="featuredinfo.cyclepath[lte]" value="1.5" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="close to cycle path" name="featuredinfo.cyclepath[lte]" value="1.5" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="close to cycle path"> Close to cycle path</label></span>
-                    <span><input type="checkbox" id="close to public transport" name="featuredinfo.publictransport[lte]" value="10" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="close to public transport" name="featuredinfo.publictransport[lte]" value="10" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="close to public transport"> Close to public transport</label></span>
                     
                 </div>
 
                 <div className={styles.checkboxcolumn}>
 
-                    <span><input type="checkbox" id="pet friendly" name="featuredinfo.petfriendly" value="true" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="pet friendly" name="featuredinfo.petfriendly" value="true" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="pet friendly">Pet Friendly</label></span>
-                    <span><input type="checkbox" id="furnished" name="featuredinfo.furnished" value="true" onChange={props.handleQueryCheckbox}/>
+                    <span><input className={styles.checkboxcolor} type="checkbox" id="furnished" name="featuredinfo.furnished" value="true" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="furnished">Furnished</label></span>
                     
                 </div>

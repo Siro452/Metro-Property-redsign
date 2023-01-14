@@ -4,30 +4,13 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    margin-top: 9rem;
-    margin-bottom: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
 
     /* border: 3px solid blue; */
 }
 
 
-
-.noresultsreturned{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Inter, sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    padding-top: 5rem;
-    padding-bottom: 10rem;
-}
-
-.noresultsreturned img{
-    height: 15rem;
-    margin-bottom: 1.5rem;
-    /* border: 2px solid blue; */
-}
 
 .featuredrentalstitle{
     width: 33rem;

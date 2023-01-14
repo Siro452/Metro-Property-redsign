@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom';
 import styles from "./properties.module.css";
 
 //Component imports---------------
@@ -6,6 +7,8 @@ import Navbar from "../../components/navbar/navbar"
 import Footer from "../../components/footer/footer"
 import FeaturedRentalCardLrg from "../../components/featuredrentalcardlrg/featuredrentalcardlrg"
 import SearchContainer from "../../components/searchcontainer/searchcontainer"
+
+import Testingform from './testingform';
 
 //Image imports-------------------
 import pagination from "../../assets/paginationimage.svg"
@@ -16,9 +19,7 @@ export default function Properties() {
 
   const [featuredListingData, setFeaturedListingData] = useState([])
   const [query, setQuery] = useState("")
-  const [noSearchResults, setNoSearchResults]= useState([])
 
-  //Fetching the featured listings on load
   useEffect(() => {
     fetch("http://localhost:8080/featuredListing")
     .then((res) => res.json())
@@ -29,14 +30,18 @@ export default function Properties() {
     })
   },[])
 
+  function handleDisplayMoreFeatured(){
+
+  }
 
 // This function removes checkbox data from the query if unchecked
   function handleQueryCheckbox(e){
       if(!e.target.checked){
-
+      console.log("this is not checked")
+      console.log(query)
       const removeCheckbox = {...query}
-      delete removeCheckbox[e.target.name]//remove the key value pair of the unchecked box
-
+      delete removeCheckbox[e.target.name]
+      console.log(removeCheckbox)
       setQuery(removeCheckbox)
     }else {
       setQuery({...query, [e.target.name]: e.target.value})
@@ -46,34 +51,51 @@ export default function Properties() {
   // This function removes dropdown data if the field is not set
   function handleQuery(e){
     
-    if (e.target.value === "any"){
-        
+    if (e.target.value == "any"){
+      // console.log(query)  
       const toRemove = {...query}//shallow copying state
       delete toRemove[e.target.name] //remove the key value pair set to any
-      
+      // console.log(toRemove)
       setQuery(toRemove)//set the state equal to this new object
     }
-     else{
+
+    // else if(!e.target.checked){
+    //   console.log("this is not checked")
+    //   console.log(query)
+    //   const removeCheckbox = {...query}
+    //   delete removeCheckbox[e.target.name]
+    //   console.log(removeCheckbox)
+    //   setQuery(removeCheckbox)
+    // }
+    
+    else{
       setQuery({...query, [e.target.name]: e.target.value})
     }
   }
 
-// This function sends the query request to the database
+  const queryParams = useSearchParams()
+
   function handleSearchSubmit(e){
     e.preventDefault();
+    console.log("The submit button is pressed")
+    console.log(query)
+    console.log(typeof query)
     
+
+    // const stringQuery = JSON.stringify(query)
+    // console.log(stringQuery)
+    // console.log(typeof stringQuery)
+
+    // const queryParameters = new URLSearchParams(window.location.search)
     const queryParameters = new URLSearchParams(query).toString();
 
-    fetch(`http://localhost:8080/searchfilter?${queryParameters}`)
+    console.log(queryParameters)
+
+    fetch(`http://localhost:8080/testparams?${queryParameters}`)
     .then((res) => res.json())
     .then((resultsData) => {
       //Testing logs----------
       console.log(resultsData)
-      if(resultsData.length === 0){
-        console.log("no results returned")
-      }else{
-        console.log("results returned")
-      }
       
     })
   }
@@ -99,11 +121,9 @@ export default function Properties() {
           <img src={pagination} alt="pages icons" />
         
         </section>
-
-        <Footer /> 
+        <Footer />
+        <Testingform />
       
     </div>
-  )
-}
 
-
+        )}

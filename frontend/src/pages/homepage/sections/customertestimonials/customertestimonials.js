@@ -1,16 +1,18 @@
-import Line from "../../../../components/line/line";
 import styles from "./customertestimonials.module.css";
 import TestimonialCard from "./testimonialcard";
 import customer1 from "../../../../assets/customer1.png";
 import customer2 from "../../../../assets/customer2.png";
 import carosel from "../../../../assets/carosel.png";
+import SubHeading from "../../../../components/subheading/subheading";
 
 export default function CustomerTestimonials() {
   return (
     <div className={styles.header}>
-      <Line />
-      <h3>Customer Testimonials</h3>
-      <p>We value our customers' feedback</p>
+      <SubHeading
+        title="Customer Testimonials"
+        content="We value our customers' feedback"
+      />
+
       <div className={styles.testimonialscontainer}>
         <TestimonialCard
           customerimg={customer1}

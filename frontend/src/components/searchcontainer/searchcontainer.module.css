@@ -124,12 +124,12 @@
 }
 
 .checkboxcolumn input{
-    /* outline: 2px solid rgba(203, 210, 224, 1);
-    height: 1.25rem;
-    width: 1.25rem;
+    /* outline: 2px solid rgba(203, 210, 224, 1); */
+    height: 1.15rem;
+    width: 1.15rem;
     
     
-    border-radius: .2rem; 
+    /* border-radius: .2rem; 
     -moz-appearance:none;
     -webkit-appearance:none;
     -o-appearance:none; */

@@ -53,14 +53,20 @@ export default function SearchContainer(props) {
                     <span><img src={priceicon} alt="price icon" />Max Rent/wk</span>
                     <select id="cost" name="cost[lte]" className={styles.mainfiltersinput} onChange={props.handleQuery}>
                         <option value="any" selected>Any</option>
+                        <option value="350" >$350</option>
+                        <option value="400" >$400</option>
                         <option value="450" >$450</option>
-                        <option value="550" >$500</option>
+                        <option value="500" >$500</option>
                         <option value="550">$550</option>
                         <option value="600" >$600</option>
                         <option value="650">$650</option>
                         <option value="700">$700</option>
                         <option value="750">$750</option>
                         <option value="800">$800</option>
+                        <option value="850">$850</option>
+                        <option value="900">$900</option>
+                        <option value="950">$950</option>
+                        <option value="1000">$1000</option>
                     </select>
                     
                 </div>
@@ -126,7 +132,7 @@ export default function SearchContainer(props) {
 
                     <span><input type="checkbox" id="pet friendly" name="featuredinfo.petfriendly" value="true" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="pet friendly">Pet Friendly</label></span>
-                    <span><input type="checkbox" id="furnished" name="furnished" value="true" onChange={props.handleQueryCheckbox}/>
+                    <span><input type="checkbox" id="furnished" name="featuredinfo.furnished" value="true" onChange={props.handleQueryCheckbox}/>
                     <label htmlFor="furnished">Furnished</label></span>
                     
                 </div>

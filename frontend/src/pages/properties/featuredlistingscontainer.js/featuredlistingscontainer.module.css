@@ -1,40 +1,3 @@
-.outermostcontainer{
-    height: fit-content;
-    width: 100vw;
-    background-color:  #F5F5F5;
-    overflow-x: hidden;
-
-    background-repeat: no-repeat;
-    
-    
-    /* background-position: 0 -1rem; */
-}
-
-.bannerbackground{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 448px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 -1rem;
-}
-
-.bannerbackground h2{
-    font-family: "DM Serif Display", sans-serif;
-    font-weight: 400;
-    font-size: 3.125rem;
-    color: rgba(0, 0, 0, 1);
-    text-align: center; 
-    padding: 3.125rem 0;
-
-}
-
-.section{
-    max-width: 100vw;
-}
-
 .featuredrentalssection{
     display: flex;
     flex-direction: column;
@@ -46,6 +9,8 @@
 
     /* border: 3px solid blue; */
 }
+
+
 
 .noresultsreturned{
     display: flex;
@@ -75,6 +40,3 @@
 
     /* border: 2px solid red; */
 }
-
-
-

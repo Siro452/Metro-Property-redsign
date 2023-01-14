@@ -6,17 +6,26 @@ import Navbar from "../../components/navbar/navbar"
 import Footer from "../../components/footer/footer"
 import FeaturedRentalCardLrg from "../../components/featuredrentalcardlrg/featuredrentalcardlrg"
 import SearchContainer from "../../components/searchcontainer/searchcontainer"
+import ListingsContainer from './listingscontainer/listingscontainer';
+import FeaturedListingsContainer from './featuredlistingscontainer.js/featuredlistingscontainer';
+
 
 //Image imports-------------------
 import pagination from "../../assets/paginationimage.svg"
 import background from "../../assets/searchbackgroundimage.png"
+import magred from "../../assets/searchresultsred.svg"
+import magblue from "../../assets/searchresultsblue.svg"
 
 
 export default function Properties() {
 
   const [featuredListingData, setFeaturedListingData] = useState([])
+  const [featuredListingsVisible, setFeaturedListingsVisible] = useState(true)
   const [query, setQuery] = useState("")
-  const [noSearchResults, setNoSearchResults]= useState([])
+  const [searchData, setSearchData] = useState([])
+  const [noSearchResults, setNoSearchResults]= useState(false)
+  const [limitedResults, setLimitedResults] = useState([])
+  
 
   //Fetching the featured listings on load
   useEffect(() => {
@@ -26,6 +35,7 @@ export default function Properties() {
       //Testing logs----------
       console.log(resultsData)
       setFeaturedListingData(resultsData)
+      setFeaturedListingsVisible(true)
     })
   },[])
 
@@ -71,13 +81,27 @@ export default function Properties() {
       console.log(resultsData)
       if(resultsData.length === 0){
         console.log("no results returned")
+        setTimeout(() => {
+          setNoSearchResults(true);
+        }, "500")
+        
+        console.log(noSearchResults)
       }else{
+        let data = [...resultsData]
+
         console.log("results returned")
+        setNoSearchResults(false)
+        setSearchData(resultsData)
+        setFeaturedListingsVisible(false)
+
+        const slicedData = data.slice(0,9)// This function returns a limited set of results to display on the page- pagination would be more effective. 
+        setLimitedResults(slicedData)
       }
-      
-    })
+      })
   }
 
+  
+ 
 
 
   return (
@@ -87,20 +111,29 @@ export default function Properties() {
           <h2>Search Our Properties</h2>
           <SearchContainer query={query} setQuery={setQuery} handleSearchSubmit={handleSearchSubmit} handleQuery={handleQuery} handleQueryCheckbox={handleQueryCheckbox}/>
         </div>
+
         
         <section className={styles.featuredrentalssection}>
+          {noSearchResults && <div className={styles.noresultsreturned}><img src={magblue} /> <p>Oops! No properties match with your searched criteria! Sorry!</p></div>}
+
           <div className={styles.featuredrentalstitle}>Featured Rentals</div>
-          {featuredListingData && featuredListingData.map((listing, index) => {
+          {featuredListingsVisible && featuredListingData.map((listing, index) => {
               
             return(
               <FeaturedRentalCardLrg key={index} image={listing.image.featuredimg} address={listing.address.streetaddress} cost={listing.cost} carparks={listing.featuredinfo.carparks} bathrooms={listing.featuredinfo.bathrooms} bedrooms={listing.featuredinfo.bedrooms}/>
             )
           })}
           <img src={pagination} alt="pages icons" />
+
+          <ListingsContainer limitedResults={limitedResults} noSearchResults={noSearchResults} searchData={searchData} />
         
+          
+        <FeaturedListingsContainer noSearchResults={noSearchResults} featuredListingsVisible={featuredListingsVisible} featuredListingData={featuredListingData} />
         </section>
 
+
         <Footer /> 
+
       
     </div>
   )

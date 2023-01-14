@@ -11,6 +11,7 @@
   align-content: center;
   margin: 5% 2%;
   text-decoration: none;
+  transition: box-shadow .5s;
 }
 
 .listingcard:hover {

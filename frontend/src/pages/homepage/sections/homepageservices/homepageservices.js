@@ -4,19 +4,17 @@ import serviceCard1 from "../../../../assets/servicecard1.png";
 import serviceCard2 from "../../../../assets/servicecard2.png";
 import serviceCard3 from "../../../../assets/servicecard3.png";
 import serviceCard4 from "../../../../assets/servicecard4.png";
-import Line from "../../../../components/line/line";
+import SubHeading from "../../../../components/subheading/subheading";
 
 export default function HomePageServices() {
   return (
     <div className={styles.section}>
-      <div className={styles.servicecontainer}>
-        <Line />
-        <h3>Services That We Offer</h3>
-        <p>
-          Our property management services are comprehensive and encompass the
-          full range of owner and tenants needs.
-        </p>
-      </div>
+      <SubHeading
+        title="Services That We Offer"
+        content="Our property management services are comprehensive and encompass the
+        full range of owner and tenants needs."
+      />
+
       <div className={styles.cardcontainer}>
         <ServiceCard
           cardImg={`${serviceCard1}`}

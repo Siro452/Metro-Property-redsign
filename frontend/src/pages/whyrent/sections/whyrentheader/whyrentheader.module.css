@@ -1,15 +1,19 @@
 .bodybackground {
   height: 517.07px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
 }
 
 .wordscontainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
   color: #000000;
   font-style: normal;
-  max-width: 50%;
-  padding: 7rem 5rem;
+  width: 80%;
+  padding: 7rem 10%;
 }
 
 .wordscontainer h1 {

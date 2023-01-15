@@ -6,7 +6,9 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 export default function LowerNavBar() {
   return (
     <div className={styles.lowerheader}>
-      <Link id={styles.home}>HOME</Link>
+      <Link id={styles.home} to="/">
+        HOME
+      </Link>
 
       <Dropdown
         autoClose={true}
@@ -45,7 +47,11 @@ export default function LowerNavBar() {
           FOR TENANTS
         </Dropdown.Toggle>
         <Dropdown.Menu className={styles.subnav_content}>
-          <Dropdown.Item className={styles.subnav_content_item} eventKey="1">
+          <Dropdown.Item
+            className={styles.subnav_content_item}
+            href="/whyrent"
+            eventKey="1"
+          >
             Renting With Us
           </Dropdown.Item>
           <Dropdown.Item

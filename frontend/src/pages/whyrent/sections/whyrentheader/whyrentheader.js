@@ -16,7 +16,10 @@ export default function WhyRentHeader() {
           expectation. Our property range is comprehensive we can definitely
           find a perfect match for your needs.
         </p>
-        <SearchButtonRed buttonTitle={"Find A Propery"} />
+        <SearchButtonRed
+          linkName="/propertiestorent"
+          buttonTitle="Find A Propery"
+        />
       </div>
     </div>
   );

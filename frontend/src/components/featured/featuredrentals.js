@@ -28,7 +28,10 @@ export default function FeaturedRentals() {
 
       <div className={styles.featuredmaincontainer}>
         <div className={styles.subsection}>
-          <SearchButtonRed buttonTitle={"Search All"} />
+          <SearchButtonRed
+            buttonTitle={"Search All"}
+            linkName="/propertiestorent"
+          />
         </div>
         <div className={styles.featuredsubcontainer}>
           {" "}

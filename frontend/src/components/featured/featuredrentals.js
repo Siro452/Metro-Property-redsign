@@ -1,8 +1,8 @@
 import styles from "./featured.module.css";
-import SearchButtonRed from "../../../../components/buttons/searchbuttonred";
-import ListingCard from "../../../../components/listingcard/listingcard";
+import SearchButtonRed from "../buttons/searchbuttonred";
+import ListingCard from "../listingcard/listingcard";
 import React, { useEffect, useState } from "react";
-import SubHeading from "../../../../components/subheading/subheading";
+import SubHeading from "../subheading/subheading";
 
 export default function FeaturedRentals() {
   const [featuredListingData, setFeaturedListingData] = useState([]);

@@ -11,7 +11,6 @@ import NoSearchResults from './nosearchresults/nosearchresults';
 
 
 //Image imports-------------------
-import pagination from "../../assets/paginationimage.svg"
 import background from "../../assets/searchbackgroundimage.png"
 
 

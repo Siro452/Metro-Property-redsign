@@ -7,6 +7,7 @@ import Properties from "./pages/properties/properties";
 import TestingForm from "./pages/properties/testingform";
 import HomePage from "./pages/homepage/homepage";
 import WhyRent from "./pages/whyrent/whyrent";
+import IndividualListing from "./pages/individuallisting/individuallisting";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/PropertiesToRent" element={<Properties />}></Route>
           <Route path="/TestingForm" element={<TestingForm />}></Route>
+          <Route path="/PropertyListing/:id" element={<IndividualListing/>}></Route>
           <Route path="/WhyRent" element={<WhyRent />}></Route>
         </Routes>
       </BrowserRouter>

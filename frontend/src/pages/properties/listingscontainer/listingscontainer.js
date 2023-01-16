@@ -53,7 +53,7 @@ export default function ListingsContainer(props) {
           </span>
         </div>
 
-        {mapVisibility && <img src={map} />}
+        {mapVisibility && <img src={map} alt="map" />}
       </div>
 
       <div className={styles.selectcontainer}>

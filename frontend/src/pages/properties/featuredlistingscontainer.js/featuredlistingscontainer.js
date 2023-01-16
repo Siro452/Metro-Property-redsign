@@ -4,8 +4,6 @@ import styles from "./featuredlistingscontainer.module.css";
 import FeaturedRentalCardLrg from "../../../components/featuredrentalcardlrg/featuredrentalcardlrg";
 
 //Image imports-------------------
-import magnifyingglass from "../../../assets/searchresultsred.svg"
-// import magnifyingglass from "../../../assets/searchresultsblue.svg"
 import pagination from "../../../assets/paginationimage.svg";
 
 export default function FeaturedListingsContainer(props) {

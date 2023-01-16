@@ -14,7 +14,7 @@ export default function NoSearchResults(props) {
         
         {props.noSearchResults && (
         <div className={styles.noresultsreturned}>
-          <img src={magnifyingglass} />{" "}
+          <img src={magnifyingglass} alt="search-icon"/>{" "}
           <p>Oops! No properties match with your searched criteria! Sorry!</p>
         </div>
       )}

@@ -25,6 +25,7 @@ const rentalSchema = new mongoose.Schema({
     gym: Number,
     park: Number,
     featuredproperty: Boolean,
+    housetype: String
   },
   propertyinfo: String,
   cost: Number,

@@ -40,7 +40,9 @@ export default function ListingsContainer(props) {
     <div className={styles.outermostcontainer}>
       <div className={styles.mapcontainer}>
         <div className={styles.mapheader}>
-          <p className={styles.numoflistings}>Showing {numOfListingsReturned} results</p>
+          <p className={styles.numoflistings}>
+            Showing {numOfListingsReturned} results
+          </p>
           <span>
             <RedSwitch
               size="medium"
@@ -51,7 +53,7 @@ export default function ListingsContainer(props) {
           </span>
         </div>
 
-        {mapVisibility && <img src={map} />}
+        {mapVisibility && <img src={map} alt="map" />}
       </div>
 
       <div className={styles.selectcontainer}>

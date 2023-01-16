@@ -8,6 +8,7 @@ import Footer from "../../components/footer/footer"
 import ListingMainFeaturesBlue from "../../components/buttons/listingmainfeaturesblue"
 import ListingPromptsRed from "../../components/buttons/listingpromptsred"
 import PhotoHero from './photohero';
+import SimilarProperties from './similarproperties';
 
 //Image imports-------------------
 import backarrow from "../../assets/backarrow.svg"
@@ -15,6 +16,7 @@ import bed from "../../assets/bediconwhite.svg"
 import bath from "../../assets/bathiconwhite.svg"
 import pet from "../../assets/peticonwhite.svg"
 import bus from "../../assets/busiconwhite.svg"
+import maplisting from "../../assets/maplisting.png"
  
  export default function IndividualListing() {
     // Replace these with the data from the database and also change to featuredinfo.bedrooms etc
@@ -70,8 +72,6 @@ import bus from "../../assets/busiconwhite.svg"
                             <ListingPromptsRed text={"Tenancy Application"}/>
                         </div>
 
-                        
-
                     </div>
 
                 </div>
@@ -80,12 +80,12 @@ import bus from "../../assets/busiconwhite.svg"
 
 
             <section className={styles.mapsection}>
+                <div className={styles.maptitle}>Map</div>
+                <img src={maplisting} alt="map" />
 
             </section>
 
-            <section className={styles.similarproperties}>
-                Consider adding this similar properties as it's own section.
-            </section>
+            <SimilarProperties />
 
         <Footer />
 

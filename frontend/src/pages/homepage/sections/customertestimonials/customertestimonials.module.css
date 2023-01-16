@@ -28,9 +28,9 @@
 .testimonialscontainer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
   margin-bottom: 3rem;
-  justify-content: center;
 }
 
 .testimonialcard {
@@ -39,7 +39,7 @@
   align-items: center;
   text-align: left;
   margin: 0 20px;
-  width: 40%;
+  width: 30%;
   max-height: 30%;
 }
 

@@ -15,7 +15,10 @@ export default function HomePageBodyHeader() {
           Check out our tailored services we offer as an Auckland property
           management company.
         </p>
-        <SearchButtonRed buttonTitle={"Find A Propery"} />
+        <SearchButtonRed
+          linkName="/propertiestorent"
+          buttonTitle={"Find A Propery"}
+        />
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export default function WhyRentHeader() {
         </p>
         <SearchButtonRed
           linkName="/propertiestorent"
-          buttonTitle="Find A Propery"
+          buttonTitle="Find A Property"
         />
       </div>
     </div>

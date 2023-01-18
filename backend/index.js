@@ -6,6 +6,7 @@ const http = require("http");
 
 const Greeting = require("./greeting");
 const Rental = require("./rental");
+const { parse } = require("path");
 
 //========================= MIDDLEWARE ==================================//
 
@@ -62,7 +63,7 @@ app.post("/greeting", async (req, res) => {
 //========================= ENPOINTS FOR METRO SITE ===================================//
 
 //return featured listings
-app.get("/featuredListing/:id", async (req, res) => {
+app.get("/featuredListing", async (req, res) => {
   try {
     const featuredListings = await Rental.where("featuredinfo.featuredproperty")
       .equals(true)
@@ -70,7 +71,8 @@ app.get("/featuredListing/:id", async (req, res) => {
       .select("image")
       .select("address")
       .select("featuredinfo")
-      .select("cost");
+      .select("cost")
+      .select("_id");
     res.send(featuredListings);
   } catch (e) {
     console.log(e.message);
@@ -81,6 +83,12 @@ app.get("/featuredListing/:id", async (req, res) => {
 app.get("/searchfilter", async (req, res) => {
   //Shallow copying to modify the query
   let reqQuery = { ...req.query };
+app.get("/searchfilter", async(req, res) => {
+    
+    //Shallow copying to modify the query
+    let reqQuery = {...req.query}
+
+    console.log(reqQuery)
 
   //Turn the request into a json string so that $ symbols can be added with the replace function
   let queryStr = JSON.stringify(reqQuery);

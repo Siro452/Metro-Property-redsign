@@ -2,11 +2,26 @@ import styles from "./listingcard.module.css";
 import bedroom from "../../assets/bedgray.svg";
 import bathroom from "../../assets/bathtubgray.svg";
 import garage from "../../assets/cargray.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 export default function ListingCard(props) {
+  const state = {
+    "featuredinfo.bedrooms[gte]": props.bedrooms,
+    // "featuredinfo.bathrooms[gte]": props.bathrooms,
+    "address.city": props.city,
+    // "address.district": props.district,
+  };
+  const searchParams = new URLSearchParams();
+  searchParams.set("state", JSON.stringify(state));
+
   return (
-    <Link to={props.id} className={styles.listingcard}>
+    <Link
+      className={styles.listingcard}
+      to={{
+        pathname: `/PropertyListing/${props.id}`,
+        search: `?${searchParams.toString()}`,
+      }}
+    >
       <img className={styles.houseimg} src={props.image} alt="houseimg"></img>
       <div className={styles.listingcontent}>
         <h4>{props.address}</h4>

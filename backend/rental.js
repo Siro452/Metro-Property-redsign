@@ -27,7 +27,8 @@ const rentalSchema = new mongoose.Schema({
     featuredproperty: Boolean,
     housetype: String
   },
-  propertyinfo: String,
+  propertyinfo: Array,
+  propertyinfobullets: Array,
   cost: Number,
 });
 

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./individuallisting.module.css";
-import { Link } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 //Component imports---------------
 import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import ListingMainFeaturesBlue from "../../components/buttons/listingmainfeaturesblue";
 import ListingPromptsRed from "../../components/buttons/listingpromptsred";
+import PhotoHero from "./photohero";
 import SimilarProperties from "./similarproperties";
 
 //Image imports-------------------
@@ -16,20 +17,127 @@ import bath from "../../assets/bathiconwhite.svg";
 import pet from "../../assets/peticonwhite.svg";
 import bus from "../../assets/busiconwhite.svg";
 import maplisting from "../../assets/maplisting.png";
-import ImageSliderComponent from "./imageslidercomponent";
 
-export default function IndividualListing() {
-  // Replace these with the data from the database and also change to featuredinfo.bedrooms etc
-  const bedrooms = 3;
-  const bathrooms = 1;
-  const publictransport = 4;
+export default function IndividualListing({ location }) {
+  const [listingData, setListingData] = useState(false);
+  const [petFriendly, setPetfriendly] = useState(false);
+  const [paragraphBlurb, setParagraphBlurb] = useState(false);
+  const [bullets, setBullets] = useState(false);
+  const [similarProperties, setSimilarProperties] = useState(false);
+  const [similarPropertiesData, setSimilarPropertiesData] = useState(false);
+  const [slicedSimilarProperties, setSlicedSimilarProperties] = useState(false);
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(3);
 
-  const bullets = [
-    "Partially Furnished",
-    "Pet friendly",
-    "Power and internet included",
-    "Move in cost $1000, two weeks bond",
-  ];
+  const params = useParams();
+  const id = { property: params.id };
+  console.log(id);
+
+  const searchParams = new URLSearchParams(window.location.search);
+  const similar = JSON.parse(searchParams.get("state"));
+  console.log(similar);
+  console.log(similar.id);
+
+  //============ This useEffect will fetch the initial data for the listing page on load. It fetches the listing id from the dynamic route to do this.=============
+  useEffect(() => {
+    // const queried = 1
+    const queried = new URLSearchParams(id).toString();
+    // const queried = new URLSearchParams(state).toString();
+
+    console.log(queried);
+    //    below here was querying {queried}
+
+    fetch(`http://localhost:8080/PropertyListing?${queried}`)
+      .then((res) => res.json())
+      .then((resultsData) => {
+        //Testing logs----------
+        //   console.log(resultsData)
+        //   console.log(resultsData[0])
+        setListingData(resultsData[0]);
+        //   console.log(listingData)
+        //   console.log(similarProperties)
+        setPetfriendly(resultsData[0].featuredinfo.petfriendly);
+        setParagraphBlurb(resultsData[0].propertyinfo);
+        //   console.log(resultsData[0].propertyinfo[1])
+        setBullets(resultsData[0].propertyinfobullets);
+        setSimilarProperties({
+          ["featuredinfo.featuredproperty"]:
+            resultsData[0].featuredinfo.featuredproperty,
+        });
+        console.log({
+          ["featuredinfo.featuredproperty"]:
+            resultsData[0].featuredinfo.featuredproperty,
+        });
+        //   handleSimilarProperties();
+      });
+  }, []);
+
+  //===================To get similar listings======================
+  useEffect(() => {
+    // const queried = 1
+    const queried = new URLSearchParams(id).toString();
+    // const queried = new URLSearchParams(state).toString();
+    const queryParameters = new URLSearchParams(similar).toString();
+    console.log(queried);
+    console.log(queryParameters);
+    //    below here was querying {queried}
+
+    fetch(`http://localhost:8080/SimilarProperties?${queryParameters}`)
+      .then((res) => res.json())
+      .then((resultsData) => {
+        //Testing logs----------
+        console.log(resultsData);
+        setSimilarPropertiesData(resultsData);
+
+        const toSlice = [...resultsData];
+        //   const sliced = toSlice.slice(startIndex, endIndex)
+        const sliced = toSlice.slice(0, 3);
+        console.log(sliced);
+        setSlicedSimilarProperties(sliced);
+      });
+  }, []);
+
+  // ==============Trying to figure out changing listins- this method is not working================
+  useEffect(() => {
+    // const queried = 1
+    const queried = new URLSearchParams(id).toString();
+    // const queried = new URLSearchParams(state).toString();
+    const queryParameters = new URLSearchParams(similar).toString();
+    console.log(queried);
+    //    below here was querying {queried}
+
+    fetch(`http://localhost:8080/SimilarProperties?${queryParameters}`)
+      .then((res) => res.json())
+      .then((resultsData) => {
+        //Testing logs----------
+        console.log(resultsData);
+        setSimilarPropertiesData(resultsData);
+
+        const toSlice = [...resultsData];
+        const sliced = toSlice.slice(startIndex, endIndex);
+        //    const sliced = toSlice.slice(0, 3)
+        console.log(sliced);
+        setSlicedSimilarProperties(sliced);
+      });
+  }, [setStartIndex, setEndIndex]);
+
+  // ===================Handle clicks on similar properties slider================
+  function handleShowPrevious() {
+    console.log(similarPropertiesData);
+    if (startIndex === 0) {
+      setEndIndex(3);
+    } else {
+      setStartIndex(startIndex - 1);
+      setEndIndex(endIndex - 1);
+    }
+  }
+
+  function handleShowNext() {
+    if (endIndex < similarPropertiesData.length) {
+      setStartIndex(startIndex + 1);
+      setEndIndex(endIndex + 1);
+    }
+  }
 
   return (
     <div className={styles.outermostcontainer}>
@@ -50,51 +158,57 @@ export default function IndividualListing() {
 
           <div className={styles.bodyandaside}>
             <div className={styles.textinfo}>
-              <h1>Title A Cozy House at a nice location</h1>
-              <h3>15D, Chad Road, St Heliers, Auckland 1540</h3>
+              {listingData && <h1>{listingData.title}</h1>}
+              {listingData && <h3>{listingData.address["streetaddress"]}</h3>}
+
               <div className={styles.featurebtns}>
-                <ListingMainFeaturesBlue
-                  image={bed}
-                  text={`${bedrooms} Beds`}
-                />
-                <ListingMainFeaturesBlue
-                  image={bath}
-                  text={`${bathrooms} Bath`}
-                />
-                <ListingMainFeaturesBlue image={pet} text={"Pet Friendly"} />
-                <ListingMainFeaturesBlue
-                  image={bus}
-                  text={`${publictransport} mins to public transport`}
-                />
+                {listingData && (
+                  <ListingMainFeaturesBlue
+                    image={bed}
+                    text={`${listingData.featuredinfo.bedrooms} Beds`}
+                  />
+                )}
+                {listingData && (
+                  <ListingMainFeaturesBlue
+                    image={bath}
+                    text={`${listingData.featuredinfo.bathrooms} Bath`}
+                  />
+                )}
+                {petFriendly && (
+                  <ListingMainFeaturesBlue image={pet} text={"Pet Friendly"} />
+                )}
+                {listingData && (
+                  <ListingMainFeaturesBlue
+                    image={bus}
+                    text={`${listingData.featuredinfo.publictransport} mins to public transport`}
+                  />
+                )}
               </div>
+
               <h1>Property Informations</h1>
               <ul className={styles.list}>
-                {bullets.map((feature, index) => {
-                  return (
-                    <li key={index} className={styles.listitem}>
-                      {feature}
-                    </li>
-                  );
-                })}
+                {bullets &&
+                  bullets.map((feature, index) => {
+                    return (
+                      <li key={index} className={styles.listitem}>
+                        {feature}
+                      </li>
+                    );
+                  })}
               </ul>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                sagittis nunc vel libero consequat laoreet. Aliquam venenatis
-                nec ipsum non ornare. Suspendisse sagittis rutrum felis, quis
-                fringilla tellus mollis ut. Duis ultricies egestas felis, id
-                ullamcorper libero. Morbi tincidunt varius neque, in congue
-                ligula fringilla vel. Aliquam erat volutpat. Morbi nec risus ut
-                dui consectetur malesuada a sit amet diam. Ut elementum mauris
-                vitae neque porttitor ultrices. Nam molestie dignissim viverra.
-                Aliquam faucibus risus tempus enim fermentum, a tincidunt magna
-                iaculis. Vestibulum a scelerisque nisi. Pellentesque tincidunt
-                tellus eu elementum dictum. Morbi eget finibus dolor.
-              </p>
+              {paragraphBlurb &&
+                paragraphBlurb.map((sentence, index) => {
+                  return (
+                    <div key={index} className={styles.paragraphtext}>
+                      <p>{sentence}</p>
+                    </div>
+                  );
+                })}
             </div>
 
             <div className={styles.aside}>
-              <h1>$500/week</h1>
+              {listingData && <h1>${listingData.cost}/week</h1>}
               <ListingPromptsRed text={"Book a viewing"} />
               <ListingPromptsRed text={"Contact Us"} />
               <ListingPromptsRed text={"Tenancy Application"} />
@@ -108,7 +222,12 @@ export default function IndividualListing() {
         <img src={maplisting} alt="map" />
       </section>
 
-      <SimilarProperties />
+      <SimilarProperties
+        similarPropertiesData={similarPropertiesData}
+        slicedSimilarProperties={slicedSimilarProperties}
+        handleShowNext={handleShowNext}
+        handleShowPrevious={handleShowPrevious}
+      />
 
       <Footer />
     </div>

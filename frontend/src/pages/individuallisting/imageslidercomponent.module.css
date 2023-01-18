@@ -10,6 +10,10 @@
   padding-top: 20px;
 }
 
+.thumbnail {
+  padding-left: 10px;
+}
+
 .thumbnail img {
   border: 1px solid #000000;
   border-radius: 15px;

@@ -7,7 +7,7 @@ import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import ListingMainFeaturesBlue from "../../components/buttons/listingmainfeaturesblue";
 import ListingPromptsRed from "../../components/buttons/listingpromptsred";
-import PhotoHero from "./photohero";
+import ImageSliderComponent from "./imageslidercomponent";
 import SimilarProperties from "./similarproperties";
 
 //Image imports-------------------
@@ -97,8 +97,6 @@ export default function IndividualListing({ location }) {
       });
   }, []);
 
-
-
   // ==============Trying to figure out changing listins- this method is not working================
   useEffect(() => {
     // const queried = 1
@@ -123,8 +121,6 @@ export default function IndividualListing({ location }) {
       });
   }, [setStartIndex, setEndIndex]);
 
-
-
   // ===================Handle clicks on similar properties slider================
   function handleShowPrevious() {
     console.log(similarPropertiesData);
@@ -143,9 +139,6 @@ export default function IndividualListing({ location }) {
     }
   }
 
-
-  
-
   return (
     <div className={styles.outermostcontainer}>
       <Navbar />
@@ -156,8 +149,7 @@ export default function IndividualListing({ location }) {
           <p>Back</p>
         </div>
       </Link>
-
-      <PhotoHero />
+      {listingData && <ImageSliderComponent pictData={listingData} />}
 
       <section className={styles.propertyinfosectionoutercontainer}>
         <div className={styles.propertyinfosectioninnercontainer}>

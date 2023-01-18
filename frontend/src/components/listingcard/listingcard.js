@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function ListingCard(props) {
   return (
-    <Link className={styles.listingcard}>
+    <Link to={props.id} className={styles.listingcard}>
       <img className={styles.houseimg} src={props.image} alt="houseimg"></img>
       <div className={styles.listingcontent}>
         <h4>{props.address}</h4>

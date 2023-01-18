@@ -1,0 +1,7 @@
+.outermostcontainer {
+  height: 50rem;
+}
+
+.outermostcontainer button {
+  background-color: none;
+}

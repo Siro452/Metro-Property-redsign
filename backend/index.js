@@ -5,7 +5,8 @@ const cors = require('cors')
 const http = require("http"); 
 
 const Greeting = require("./greeting")
-const Rental = require("./rental")
+const Rental = require("./rental");
+const { parse } = require("path");
 
 
 //========================= MIDDLEWARE ==================================//
@@ -64,7 +65,7 @@ app.post('/greeting', async(req, res) => {
 //return featured listings
 app.get('/featuredListing', async(req, res) => {
     try{
-        const featuredListings = await Rental.where("featuredinfo.featuredproperty").equals(true).limit(3).select("image").select("address").select("featuredinfo").select("cost")
+        const featuredListings = await Rental.where("featuredinfo.featuredproperty").equals(true).limit(3).select("image").select("address").select("featuredinfo").select("cost").select("_id")
         res.send(featuredListings)
     }catch (e) {
         console.log(e.message)
@@ -77,15 +78,19 @@ app.get("/searchfilter", async(req, res) => {
     //Shallow copying to modify the query
     let reqQuery = {...req.query}
 
+    console.log(reqQuery)
+
     //Turn the request into a json string so that $ symbols can be added with the replace function
     let queryStr = JSON.stringify(reqQuery)
     
     // Some regex to add the $ infront of any greater than or less than queries
     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, (match) => `$${match}`)
-    
+    console.log(`this is after symbols added filter ${queryStr}`)
+
     // Parse the JSON to return it to an object for the .find request
     let parsedQueryStr = JSON.parse(queryStr)
-    
+    console.log(`this is just before query of filter ${parsedQueryStr}`)
+
     try{
         const returnedResults = await Rental.find(parsedQueryStr)
         
@@ -94,6 +99,82 @@ app.get("/searchfilter", async(req, res) => {
     }catch(e){
         console.log(e.message)
     }
+})
+
+
+app.get("/PropertyListing", async(req, res) => {
+
+    let reqQuery = {...req.query}
+
+    console.log(reqQuery.property)
+    try{
+        const individualListing = await Rental.where("_id").equals(reqQuery.property)
+        res.status(200).send(individualListing)
+    }catch(e){
+        console.log(e.message)
+    }
+})
+
+// Getting similar properties
+app.get("/SimilarProperties", async(req, res) => {
+
+    console.log(`this is the similar ${req.query}`)
+     //Shallow copying to modify the query
+     let reqQuery = {...req.query}
+
+     //Turn the request into a json string so that $ symbols can be added with the replace function
+     let queryStr = JSON.stringify(reqQuery)
+     console.log(queryStr)
+     
+     // Some regex to add the $ infront of any greater than or less than queries
+     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, (match) => `$${match}`)
+     console.log(`this is after symbols added similar ${queryStr}`)
+
+     // Parse the JSON to return it to an object for the .find request
+     let parsedQueryStr = JSON.parse(queryStr)
+
+     console.log(`this is just before query similar ${parsedQueryStr}`)
+     
+     try{
+         const returnedResults = await Rental.find(parsedQueryStr)
+         
+          res.status(200).send(returnedResults)
+         
+     }catch(e){
+         console.log(e.message)
+     }
+    
+})
+
+// Getting similar properties
+app.get("/SimilarPropertiesSliced", async(req, res) => {
+
+    console.log(`this is the similar ${req.query}`)
+     //Shallow copying to modify the query
+     let reqQuery = {...req.query}
+
+     //Turn the request into a json string so that $ symbols can be added with the replace function
+     let queryStr = JSON.stringify(reqQuery)
+     console.log(queryStr)
+     
+     // Some regex to add the $ infront of any greater than or less than queries
+     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, (match) => `$${match}`)
+     console.log(`this is after symbols added similar ${queryStr}`)
+
+     // Parse the JSON to return it to an object for the .find request
+     let parsedQueryStr = JSON.parse(queryStr)
+
+     console.log(`this is just before query similar ${parsedQueryStr}`)
+     
+     try{
+         const returnedResults = await Rental.find(parsedQueryStr)
+         
+          res.status(200).send(returnedResults)
+         
+     }catch(e){
+         console.log(e.message)
+     }
+    
 })
 
 

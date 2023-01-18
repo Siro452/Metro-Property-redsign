@@ -13,7 +13,7 @@
 
 .outermostcontainer p{
     width: 43.75rem;
-    margin-bottom: 3.5rem;
+    /* margin-bottom: 3.5rem; */
     font-family: Inter, sans-serif;
     font-size: 1.25rem;
     text-align: center;
@@ -34,8 +34,37 @@
 }
 
 .cardcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
-    height: 40rem;
     max-width: 2000px;
-    background-color: aqua;
+    margin-top: -3rem;
+    /* height: 40rem; */
+    /* background-color: aqua; */
+}
+
+.arrowleft{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    /* background-color: rgb(148, 148, 174); */
+}
+
+.arrowright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+    /* background-color: rgb(151, 151, 183); */
+    transform: rotate(180deg);
+}
+
+.arrowleft:hover{
+    opacity: 0.3;
 }

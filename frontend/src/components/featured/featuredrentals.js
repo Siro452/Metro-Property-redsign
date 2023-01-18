@@ -14,6 +14,7 @@ export default function FeaturedRentals() {
         //Testing logs----------
         console.log(resultsData);
         setFeaturedListingData(resultsData);
+        
       });
   }, []);
 
@@ -42,10 +43,14 @@ export default function FeaturedRentals() {
                   key={index}
                   image={listing.image.galleryimg}
                   address={listing.address.streetaddress}
+                  city={listing.address.city}
+                  district={listing.address.district}
+                  suburb={listing.address.suburb}
                   cost={listing.cost}
                   carparks={listing.featuredinfo.carparks}
                   bathrooms={listing.featuredinfo.bathrooms}
                   bedrooms={listing.featuredinfo.bedrooms}
+                  id={listing._id}
                 />
               );
             })}

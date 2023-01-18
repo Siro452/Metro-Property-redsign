@@ -13,6 +13,8 @@ import ListingCard from "../../../components/listingcard/listingcard";
 import pagination from "../../../assets/paginationimage.svg";
 import map from "../../../assets/mapscreenshot.png";
 
+
+
 export default function ListingsContainer(props) {
   const [mapVisibility, setMapVisibility] = useState(true);
 
@@ -77,10 +79,13 @@ export default function ListingsContainer(props) {
                 key={index}
                 image={listing.image.galleryimg}
                 address={listing.address.streetaddress}
+                city={listing.address.city}
+                district={listing.address.district}
                 cost={listing.cost}
                 carparks={listing.featuredinfo.carparks}
                 bathrooms={listing.featuredinfo.bathrooms}
                 bedrooms={listing.featuredinfo.bedrooms}
+                id={listing._id}
               />
             );
           })}

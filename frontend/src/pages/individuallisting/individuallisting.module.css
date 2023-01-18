@@ -94,6 +94,8 @@
     font-size: 1.25rem;
     font-weight: 400;
     width: 90rem;
+    /* white-space: pre; */
+    /* white-space:pre-line; */
     /* border: 2px solid purple; */
 }
 
@@ -111,6 +113,13 @@
     color: black;
     margin-top: 1rem;
     margin-bottom: 2.5rem;
+}
+
+.paragraphtext{
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: black;
 }
 
 

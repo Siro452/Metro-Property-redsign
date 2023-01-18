@@ -93,6 +93,9 @@ export default function Properties() {
         setFeaturedListingsVisible(false)
 
         const slicedData = data.slice(0,9)// This function returns a limited set of results to display on the page- pagination would be more effective. 
+
+        console.log(slicedData)
+
         setLimitedResults(slicedData)
       }
       })

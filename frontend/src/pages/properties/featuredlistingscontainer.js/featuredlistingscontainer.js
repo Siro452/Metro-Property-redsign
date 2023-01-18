@@ -24,6 +24,7 @@ export default function FeaturedListingsContainer(props) {
               carparks={listing.featuredinfo.carparks}
               bathrooms={listing.featuredinfo.bathrooms}
               bedrooms={listing.featuredinfo.bedrooms}
+              id={listing._id}
             />
           );
         })}

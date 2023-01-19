@@ -9,8 +9,9 @@
 
 .subsection {
   position: absolute;
-  left: 69%;
-  top: 130px;
+  top: 10rem;
+  right: 430px;
+  margin: 0;
 }
 
 .searchbutton {
@@ -27,5 +28,5 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 0 0;
+  margin: 5% 0;
 }

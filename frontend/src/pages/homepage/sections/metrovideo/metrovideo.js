@@ -12,7 +12,7 @@ export default function MetroVideo() {
           light={videoThumbNail}
           url="https://www.youtube.com/watch?v=kTlv5_Bs8aw"
           playing
-          playIcon={<img src={iconplay}></img>}
+          playIcon={<img src={iconplay} alt="youtube play"></img>}
           controls="true"
         />
       </div>

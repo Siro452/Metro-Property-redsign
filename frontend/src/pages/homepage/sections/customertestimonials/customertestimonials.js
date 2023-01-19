@@ -24,7 +24,7 @@ export default function CustomerTestimonials() {
           customerimg={customer2}
           imgDesc="Girl who holds ice cream"
           date="20 Sep, 2022"
-          testimonial="Really positive experience renting with MetroNZ. John Baatjes was amazing, even moved us in on Christmas Eve and gave us lots of help and advice about the local area. Quick responses with emails and a really genuine person. Thank you!"
+          testimonial="Really positive experience renting with MetroNZ. Park Jimin was amazing, even moved us in on Christmas Eve and gave us lots of help and advice about the local area. Quick responses with emails and a really genuine person. Thank you!"
         />
       </div>
       <div className={styles.caroselbuttons}>

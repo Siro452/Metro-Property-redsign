@@ -1,37 +1,6 @@
 
 
 {
-  {
-  "_id": { "$oid": "63bb85d2759508f028a1fecf" },
-  "title": "Convenience with Style and Quality ",
-  "image": {
-    "featuredimg": "String",
-    "galleryimg": "String"
-  },
-  "address": {
-    "streetaddress": "34 Dahl Drive, Trentham, Upper Hutt, Wellington",
-    "city": "Wellington",
-    "district": "Upper Hutt",
-    "suburb": "Trentham",
-    "postcode": 5018
-  },
-  "featuredinfo": {
-    "bedrooms": 3,
-    "bathrooms": 1,
-    "carparks": 1,
-    "petfriendly": false,
-    "furnished": false,
-    "publictransport": 8,
-    "cyclepath": 2,
-    "supermarket": 15,
-    "gym": 18,
-    "park": 5,
-    "featuredproperty": false,
-    "housetype": "house"
-  },
-  "propertyinfo": "As a brand-new build in Wallaceville Estate, everything is done to its highest standard, so you can move right in and relax.   The homes open plan kitchen, dining and living space is where you'll enjoy the indoor-outdoor flow with the large slider doors that open up to a low maintenance fenced patio. The kitchen boasts an electric oven with gas hobs, rangehood overhead, dishwasher, gorgeous stone benchtops with plenty of preparation space and a breakfast bar where you'll be sure to entertain family and friends. Downstairs also offers a separate guest toilet, separate laundry and tub and ample storage space under the stair way.   Upstairs there is three double bedrooms all with double wardrobes for plenty of storage as well as large windows that open up and brighten each bedroom, making them comfortable and inviting. The main bathroom includes a toilet, vanity, heated towel rail and a generously sized shower that runs off the gas infinity hot water system, you'll never want to hop out.   This 102m2 home is fully insulated with double glazed windows giving a clean dry feel throughout, a heat pump, your own car space and keyless front door entry.   With Grants bush reserve adjacent to the home, this parkland area with walkways will remain untouched with no development on it. You will also only be minutes away from Wallaceville train station, making your commute to Upper Hutt or beyond even more hassle free.",
-  "cost": 452
-},
 
 {
   "_id": { "$oid": "63bb85d2759508f028a1fecg" },
@@ -63,7 +32,7 @@
   },
   "propertyinfo": "Located in the sought-after neighbourhood of Raumati South, 11 Grange Park Avenue offers everything a family could want and more. Built in the 1960's, this property boasts plenty of space for everyone, with a granny flat that could be used for extended family members or as a source of income.  The property has 4 bedrooms, 3 bathrooms, 2 lounges, office, studio/hobby room and a spacious modern kitchen/dining room and a separate laundry.  The full-size section and single garage provide ample storage and off-street parking, while the cul-de-sac location means no through traffic to worry about. Plus, with two primary schools and pre-school options so close, Raumati South has so much on offer - this property truly has it all.  Don't miss this opportunity to make 11 Grange Park Avenue your family's forever home. Contact us to schedule a viewing and take the first step towards your dream life in Raumati South.",
   "cost": 894
-}}
+}
 
 {
   "_id": { "$oid": "63bb85d2759508f028a1fecg" },
@@ -97,33 +66,43 @@
   "cost":623
 }
 
-
-,
-  "title": "Brand new completed home",
+{
+  "_id": { "$oid": "63c14511d54be2a2a9e3c974" },
+  "title": "Beautiful, Tranquil and Scenic. Does it get better than this?",
   "image": {
-    "featuredimg": "String",
-    "galleryimg": "String"
+    "featuredimg": "https://i.postimg.cc/7P0GcfHt/01-Airbnb-BTS-IN-THE-SOOP-Exterior-with-BTS-IN-THE-SOOP-Credit-Time-of-Blue-4.jpg",
+    "galleryimg": ["https://i.postimg.cc/7P0GcfHt/01-Airbnb-BTS-IN-THE-SOOP-Exterior-with-BTS-IN-THE-SOOP-Credit-Time-of-Blue-4.jpg", "https://i.postimg.cc/SRFXRprG/17-Airbnb-BTS-IN-THE-SOOP-Kitchen-Credit-Time-of-Blue-1.jpg", "https://i.postimg.cc/MGLfkBfN/05-Airbnb-BTS-IN-THE-SOOP-Bedroom-2-Credit-Time-of-Blue.jpg", "https://i.postimg.cc/SNL9XjHY/dc2ced30-148c-4a84-ae4d-077ccf4d5490-jpeg.webp", "https://i.postimg.cc/DwBbgHv2/20ccfefb-fcbf-4e05-989f-979c56506307-jpeg.webp"]
   },
   "address": {
-    "streetaddress": "9 Kotero Road, Mount Roskill, Auckland City, Auckland",
-    "city": "auckland ",
+    "streetaddress": "7 Beech-Thyme Street, St Mary's Bay, Auckland",
+    "city": "auckland",
     "district": "auckland city",
-    "suburb": "mount roskill",
-    "postcode": 2065
+    "suburb": "st marys bay",
+    "postcode": 1032
   },
   "featuredinfo": {
     "bedrooms": 3,
-    "bathrooms": 2,
-    "carparks": 1,
-    "petfriendly": false,
-    "furnished": false,
-    "publictransport": 5,
-    "cyclepath": 9,
-    "supermarket": 3,
-    "gym": 3,
-    "park": 4,
+    "bathrooms": 1,
+    "carparks": 2,
+    "petfriendly": true,
+    "furnished": true,
+    "publictransport": 12,
+    "cyclepath": 20,
+    "supermarket": 3.2,
+    "gym": 0.1,
+    "park": 0.1,
     "featuredproperty": false,
-    "housetype": "unit"
+    "housetype": "house"
   },
-  "propertyinfo": "An amazing opportunity to secure a fantastic freehold, brand new three bedroom home in Mt Roskill. Available to move in by Christmas. Present all offers, this home MUST GO  The home has an open plan living and dining downstairs which opens to a north western facing deck and garden, creating a great entertaining space and a connection with the outdoors. Having a fully fenced garden which is adjacent to the revived Freeland Reserve makes it a fantastic location for kids and pets.   There are three generous sized double bedrooms and a large family bathroom with bath located upstairs.   Location is the key! The area is only seven kilometres from the central city, which is easily accessible via public transport, including a frequent bus service along Dominion Road. It’s zoned for May Road Primary School, Mt Roskill Intermediate, and Mt Roskill Grammar.  There’s a lot of green space for you to enjoy the outdoors, including Freeland Reserve at your doorstep. Akarana and Maungakiekie Golf Course are located just down the road. Keith Hay Park and Cameron Pool and Leisure Centre have excellent sport and recreation facilities  Come and visit the home located at 9 Kotero Road on Sunday 11am-2pm, to see what this home has to offer.",
-  "cost":650
+  "propertyinfo": ["The lush scenery at this property is something to second to none. The entrance to this grand estate includes steps up from the ample parking space. There are also steps between the first floor and the bedroom which is on the airy mezzanine area.","If your an entertainer, this property is like a dream with a large open kitchen and dining area, and loft living room, perfect to host all your friends and family.", "If being outdoors is more your thing, the tennis courts, swimming pool and wooded areas close by might spark your interest.", "Don't miss out of your opportunity to wake up in this beautiful house everyday."],
+  "propertyinfobullets": ["Pet friendly", "Close to parks", "Dedicated gym facilities", "Outdoor pool"],
+  "cost":700,
+}
+}
+
+
+
+
+
+
+

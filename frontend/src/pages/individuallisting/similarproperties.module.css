@@ -51,7 +51,7 @@
     width: 6rem;
     height: 6rem;
     cursor: pointer;
-    /* background-color: rgb(148, 148, 174); */
+    transition: all .5s;
 }
 
 .arrowright{
@@ -61,7 +61,6 @@
     width: 6rem;
     height: 6rem;
     cursor: pointer;
-    /* background-color: rgb(151, 151, 183); */
     transform: rotate(180deg);
     transition: all .5s;
 }

@@ -14,7 +14,6 @@ export default function FeaturedRentals() {
         //Testing logs----------
         console.log(resultsData);
         setFeaturedListingData(resultsData);
-        
       });
   }, []);
 
@@ -28,6 +27,7 @@ export default function FeaturedRentals() {
       ></SubHeading>
       <div className={styles.subsection}>
         <SearchButtonRed
+          className={styles.searchbutton}
           buttonTitle={"Search All"}
           linkName="/propertiestorent"
         />

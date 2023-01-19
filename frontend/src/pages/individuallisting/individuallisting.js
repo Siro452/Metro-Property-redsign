@@ -7,7 +7,7 @@ import Navbar from "../../components/navbar/navbar";
 import Footer from "../../components/footer/footer";
 import ListingMainFeaturesBlue from "../../components/buttons/listingmainfeaturesblue";
 import ListingPromptsRed from "../../components/buttons/listingpromptsred";
-import PhotoHero from "./photohero";
+import ImageSliderComponent from "./imageslidercomponent";
 import SimilarProperties from "./similarproperties";
 
 //Image imports-------------------
@@ -102,8 +102,7 @@ export default function IndividualListing() {
           <p>Back</p>
         </div>
       </Link>
-
-      <PhotoHero />
+      {listingData && <ImageSliderComponent pictData={listingData} />}
 
       <section className={styles.propertyinfosectionoutercontainer}>
         <div className={styles.propertyinfosectioninnercontainer}>

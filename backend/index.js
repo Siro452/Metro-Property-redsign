@@ -9,7 +9,6 @@ const Rental = require("./rental");
 const { parse } = require("path");
 
 //========================= MIDDLEWARE ==================================//
-
 env.config();
 const app = express();
 app.use(express.json());
@@ -73,7 +72,9 @@ app.get("/featuredListing", async (req, res) => {
       .select("featuredinfo")
       .select("cost")
       .select("_id");
+
     res.status(200).send(featuredListings);
+
   } catch (e) {
     console.log(e.message);
   }
@@ -139,7 +140,6 @@ app.get("/SimilarProperties", async (req, res) => {
     const returnedResults = await Rental.find(parsedQueryStr)
       .limit(3)
       .skip(skippedValue);
-
     res.status(200).send(returnedResults);
   } catch (e) {
     console.log(e.message);

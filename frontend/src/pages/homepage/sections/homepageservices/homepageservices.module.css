@@ -58,6 +58,8 @@
 
 .servicecard:hover {
   background: #f1cbcc;
+  transition: 1s;
+  scale: 1.1;
 }
 
 .servicecard h5 {

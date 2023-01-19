@@ -16,6 +16,11 @@
   color: #ffffff;
 }
 
+.searchbuttonred:hover {
+  scale: 1.1;
+  transition: 0.5s;
+}
+
 .contactuswhite {
   width: fit-content;
   height: 48px;
@@ -55,19 +60,20 @@
 .contactusred:hover {
   /* opacity: .8; */
   background-color: rgb(233, 82, 87);
+  scale: 1.1;
+  transition: 0.5s;
 }
 
 .contactusred:active {
   background-color: rgb(205, 28, 34);
 }
 
-
 /* LISTING MAIN FEATURES BLUE */
-.bluefeaturesbtncontainer{
+.bluefeaturesbtncontainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .7rem;
+  gap: 0.7rem;
   width: 12rem;
   min-width: fit-content;
   height: 2.75rem;
@@ -82,12 +88,12 @@
   user-select: none;
 }
 
-.bluefeaturesbtncontainer img{
+.bluefeaturesbtncontainer img {
   max-height: 1.3rem;
 }
 
 /* LISTING PROMPT RED */
-.redoutlinebtncontainer{
+.redoutlinebtncontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,17 +109,18 @@
   font-size: 1.25rem;
   background-color: white;
   border: 3px solid rgb(229, 52, 54);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   cursor: pointer;
   user-select: none;
-  transition: all .5s;
-  
+  transition: all 0.5s;
 }
 
-.redoutlinebtncontainer:hover{
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.2) 0px 4px 6px -2px;
+.redoutlinebtncontainer:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.2) 0px 4px 6px -2px;
 }
 
-.redoutlinebtncontainer:active{
+.redoutlinebtncontainer:active {
   background-color: #ebebeb;
 }

@@ -21,7 +21,7 @@ export default function ImageSliderComponent(props) {
           return (
             <div className={styles.thumbnail} key={index}>
               <img
-                className={imgData.id == index ? "styles.clicked" : ""}
+                className={imgData == index ? styles.clicked : ""}
                 src={thumbnail}
                 onClick={() => handleClick(index)}
                 height="145"

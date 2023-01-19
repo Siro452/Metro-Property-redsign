@@ -11,7 +11,39 @@ import houseicon from "../../assets/houseicon.svg";
 
 
 export default function SearchContainer(props) {
- 
+    const anyDistricts = [{value: "any", text: "All Districts"}]
+
+    let districtToShow;
+    let suburbToShow;
+
+    // To change the district field depending on the city chosen
+    if (props.district === "any"){
+        districtToShow = [{value: "any", label: "All Districts"}]
+    }else if(props.district === 'auckland'){
+        districtToShow = [{value: "any", label: "All Districts"}, {value: "auckland city", label: "Auckland City"}, {value: "north shore city", label: "North Shore City"}, {value: "waitakere city", label: "Waitakere City"} ]
+    }else if (props.district === "wellington"){
+        districtToShow = [{value: "any", label: "All Districts"}, {value: "kapiti coast", label: "Kapiti Coast"}, {value: "lower hutt", label: "Lower Hutt"}, {value: "upper hutt", label: "Upper Hutt"}]
+    }else if(props.district === "christchurch"){
+        districtToShow = [{value: "any", label: "All Districts"}, {value: "christchurch city", label: "Christchurch City"}]
+    }
+
+    // To change the suburb field to display the right thing depending on district selected
+    if (props.suburb === "any"){
+        suburbToShow = [{value: "any", label: "All Suburbs"}] 
+    }else if(props.suburb === 'auckland city'){ 
+        suburbToShow = [{value: "any", label: "All Suburbs"}, {value: "city centre", label: "City Centre"}, {value: "glendene", label: "Glendene"}, {value: "meadowbank", label: "Meadowbank"}, {value: "mount roskill", label: "Mt Roskill"}, {value: "mount wellington", label: "Mt Wellington"}, {value: "st heliers", label: "St Heliers"}, {value: "st marys bay", label: "St Marys Bay"}]
+    }else if (props.suburb === "north shore city" | props.suburb === "waitakere city"){
+        suburbToShow = [{value: "any", label: "All Suburbs"}]
+    }else if (props.suburb === "lower hutt"){
+        suburbToShow = [{value: "any", label: "All Suburbs"}, {value: "eastbourne", label: "Eastbourne"}]
+    }else if (props.suburb === "kapiti coast"){
+        suburbToShow = [{value: "any", label: "All Suburbs"}, {value: "raumati south", label: "Raumati South"}]
+    }else if (props.suburb === "upper hutt"){
+        suburbToShow = [{value: "any", label: "All Suburbs"}, {value: "trentham", label: "Trentham"}]
+    }else if(props.suburb === "christchurch city"){
+        suburbToShow = [{value: "any", label: "All Suburbs"}, {value: "shirley", label: "Shirley"}, {value: "st albans", label: "St Albans"}, {value: "waltham", label: "Waltham"}]
+    }
+
 
   return (
     <div className={styles.outermostcontainer}>
@@ -25,24 +57,16 @@ export default function SearchContainer(props) {
                     <option value="christchurch">Christchurch</option>
                 </select>
 
-                <select id="district" name="address.district" className={styles.locationsinput} onChange={props.handleQuery}>
-                    <option value="any">All Districts</option>
-                    <option value="auckland city">Auckland City</option>
-                    <option value="north shore city">North Shore City</option>
-                    <option value="waitakere city">Waitakere City</option>
+                <select id="district" name="address.district" className={styles.locationsinput} onChange={props.handleQuery} >
+                    
+                    {districtToShow.map(option => (<option key={option.value} value={option.value}>{option.label}</option>))}
+
                 </select>
 
                 <select id="suburb" name="address.suburb" className={styles.locationsinput} onChange={props.handleQuery}>
-                    <option value="any">Any Suburb</option>
-                    <option value="city centre">City Centre</option>
-                    <option value="auckland city">Glendene</option>
-                    <option value="hillcrest">Hillcrest</option>
-                    <option value="meadowbank">Meadowbank</option>
-                    <option value="mt roskill">Mt Roskill</option>
-                    <option value="mt wellington">Mt Wellington</option>
-                    <option value="st marys bay">St Marys Bay</option>
-                    <option value="st heliers">St Heliers</option>
-                    <option value="city centre">City Centre</option>
+
+                    {suburbToShow.map(option => (<option key={option.value} value={option.value}>{option.label}</option>))}
+
                 </select>
                 <button className={styles.searchbutton} type="submit">SEARCH</button>
             </div>

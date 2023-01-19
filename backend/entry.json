@@ -1,0 +1,32 @@
+{
+    "_id": { "$oid": "63c14511d54be2a2a9e3c974" },
+    "title": "Beautiful, Tranquil and Scenic. Does it get better than this?",
+    "image": {
+      "featuredimg": "https://i.postimg.cc/7P0GcfHt/01-Airbnb-BTS-IN-THE-SOOP-Exterior-with-BTS-IN-THE-SOOP-Credit-Time-of-Blue-4.jpg",
+      "galleryimg": ["https://i.postimg.cc/7P0GcfHt/01-Airbnb-BTS-IN-THE-SOOP-Exterior-with-BTS-IN-THE-SOOP-Credit-Time-of-Blue-4.jpg", "https://i.postimg.cc/SRFXRprG/17-Airbnb-BTS-IN-THE-SOOP-Kitchen-Credit-Time-of-Blue-1.jpg", "https://i.postimg.cc/MGLfkBfN/05-Airbnb-BTS-IN-THE-SOOP-Bedroom-2-Credit-Time-of-Blue.jpg", "https://i.postimg.cc/SNL9XjHY/dc2ced30-148c-4a84-ae4d-077ccf4d5490-jpeg.webp", "https://i.postimg.cc/DwBbgHv2/20ccfefb-fcbf-4e05-989f-979c56506307-jpeg.webp"]
+    },
+    "address": {
+      "streetaddress": "7 Beech-Thyme Street, St Mary's Bay, Auckland",
+      "city": "auckland",
+      "district": "auckland city",
+      "suburb": "st marys bay",
+      "postcode": 1032
+    },
+    "featuredinfo": {
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "carparks": 2,
+      "petfriendly": true,
+      "furnished": true,
+      "publictransport": 12,
+      "cyclepath": 20,
+      "supermarket": 3.2,
+      "gym": 0.1,
+      "park": 0.1,
+      "featuredproperty": false,
+      "housetype": "house"
+    },
+    "propertyinfo": ["The lush scenery at this property is something to second to none. The entrance to this grand estate includes steps up from the ample parking space. There are also steps between the first floor and the bedroom which is on the airy mezzanine area.","If your an entertainer, this property is like a dream with a large open kitchen and dining area, and loft living room, perfect to host all your friends and family.", "If being outdoors is more your thing, the tennis courts, swimming pool and wooded areas close by might spark your interest.", "Don't miss out of your opportunity to wake up in this beautiful house everyday."],
+    "propertyinfobullets": ["Pet friendly", "Close to parks", "Dedicated gym facilities", "Outdoor pool"],
+    "cost": 700
+  }

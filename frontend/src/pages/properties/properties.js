@@ -19,6 +19,8 @@ export default function Properties() {
   const [searchData, setSearchData] = useState([]);
   const [noSearchResults, setNoSearchResults] = useState(false);
   const [limitedResults, setLimitedResults] = useState([]);
+  const [district, setDistrict] = useState("any");
+  const [suburb, setSuburb] = useState("any");
 
   //Fetching the featured listings on load
   useEffect(() => {
@@ -48,16 +50,26 @@ export default function Properties() {
 
   // This function removes dropdown data if the field is not set--------------------
   function handleQuery(e) {
+    if(e.target.name === "address.city"){
+      setDistrict(e.target.value)
+      console.log(e.target.value)
+    } 
+
+    if(e.target.name === "address.district"){
+      setSuburb(e.target.value)
+      console.log(e.target.value)
+    } 
+    
     if (e.target.value === "any") {
       const toRemove = { ...query }; //shallow copying state
       delete toRemove[e.target.name]; //remove the key value pair set to any
-
+      
       setQuery(toRemove); //set the state equal to this new object
     } else {
       setQuery({ ...query, [e.target.name]: e.target.value });
     }
   }
-
+  
   // This function sends the query request to the database----------------------
   function handleSearchSubmit(e) {
     e.preventDefault();
@@ -89,6 +101,8 @@ export default function Properties() {
       });
   }
 
+
+
   return (
     <div className={styles.outermostcontainer}>
       <Navbar />
@@ -104,6 +118,8 @@ export default function Properties() {
           handleSearchSubmit={handleSearchSubmit}
           handleQuery={handleQuery}
           handleQueryCheckbox={handleQueryCheckbox}
+          district={district}
+          suburb={suburb}
         />
       </div>
 

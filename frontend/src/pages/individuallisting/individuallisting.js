@@ -106,7 +106,7 @@ export default function IndividualListing() {
 
       <section className={styles.propertyinfosectionoutercontainer}>
         <div className={styles.propertyinfosectioninnercontainer}>
-          <p className={styles.listedon}>Listed: On a certain date</p>
+          <p className={styles.listedon}>Listed: Mon, 2nd January, 2023</p>
 
           <div className={styles.bodyandaside}>
             <div className={styles.textinfo}>

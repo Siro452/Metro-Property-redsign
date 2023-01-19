@@ -17,6 +17,21 @@ export default function Testingform() {
         }
     }
 
+
+    const options = [
+        { value: 'option1', label: 'Option 1' },
+        { value: 'option2', label: 'Option 2' },
+        { value: 'option3', label: 'Option 3' }
+      ];
+
+      const oranges = [
+        { value: 'option1', label: 'Orange' },
+        { value: 'option2', label: 'Mandarin' },
+        { value: 'option3', label: 'Tangerine' }
+      ];
+      
+     
+
     return (
         <form onSubmit={handleSubmit}>
             <input
@@ -33,6 +48,16 @@ export default function Testingform() {
                 value={query.param2}
                 onChange={e => setQuery({...query, [e.target.name]: e.target.value})}
             />
+
+            <select>
+                {oranges.map(option => (
+                <option key={option.value} value={option.value}>
+                    {option.label}
+                </option>
+                ))}
+            </select>
+
+
             <button type="submit">Submit</button>
         </form>
     );

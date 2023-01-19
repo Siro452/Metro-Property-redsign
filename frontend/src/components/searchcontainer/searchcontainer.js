@@ -52,7 +52,7 @@ export default function SearchContainer(props) {
                 <div className={styles.mainfilter}>
                     <span><img src={priceicon} alt="price icon" />Max Rent/wk</span>
                     <select id="cost" name="cost[lte]" className={styles.mainfiltersinput} onChange={props.handleQuery}>
-                        <option value="any" selected>Any</option>
+                        <option value="any" >Any</option>
                         <option value="350" >$350</option>
                         <option value="400" >$400</option>
                         <option value="450" >$450</option>

@@ -7,8 +7,10 @@ import { Link, useParams, useSearchParams } from "react-router-dom";
 export default function ListingCard(props) {
   const state = {
     "featuredinfo.bedrooms[gte]": props.bedrooms,
-    // "featuredinfo.bathrooms[gte]": props.bathrooms,
+    "featuredinfo.bathrooms[gte]": props.bathrooms,
     "address.city": props.city,
+    "_id[ne]": props.id,
+    "cost[lte]": props.cost + 100,
     // "address.district": props.district,
   };
   const searchParams = new URLSearchParams();

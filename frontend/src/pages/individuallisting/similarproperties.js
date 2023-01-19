@@ -13,10 +13,10 @@ export default function SimilarProperties(props) {
             We place high importance to finding a property for you that you will feel fully at home in and that you will want to stay in for a long time.
         </p>
 
-        <div className={styles.cardcontainer}>
+        {props.similarListingsFound ? <div className={styles.cardcontainer}>
             <div className={styles.arrowleft} onClick={props.handleShowPrevious}><img src={backarrow} /></div>
             {props.similarPropertiesData &&
-            props.slicedSimilarProperties.map((listing, index) => {
+            props.similarPropertiesData.map((listing, index) => {
                 return (
                 <ListingCard
                     key={index}
@@ -31,7 +31,8 @@ export default function SimilarProperties(props) {
                 );
             })}
             <div className={styles.arrowright} onClick={props.handleShowNext}><img src={backarrow} /></div>
-        </div>
+        </div> 
+        : <div className={styles.noresults}>Unfortnately, no similar listings were found for this property.</div>}
 
 
     </div>

@@ -8,8 +8,25 @@ import bed from "../../assets/bed.svg";
 
 
 export default function featuredrentalcardlrg(props) {
+  const state = {
+    "featuredinfo.bedrooms[gte]": props.bedrooms,
+    "featuredinfo.bathrooms[gte]": props.bathrooms,
+    "address.city": props.city,
+    "_id[ne]": props.id,
+    "cost[lte]": props.cost + 100,
+    // "address.district": props.district,
+  };
+
+  const searchParams = new URLSearchParams();
+  searchParams.set("state", JSON.stringify(state));
+
   return (
-    <Link to={{ pathname: `/PropertyListing/${props.id}` }} className={styles.linkcontainer}>
+    <Link 
+      className={styles.linkcontainer}
+      to={{
+        pathname: `/PropertyListing/${props.id}`,
+        search: `?${searchParams.toString()}`,
+      }} >
       <div className={styles.outermostcontainer}>
           <img src={props.image} alt="property listing"/>
 

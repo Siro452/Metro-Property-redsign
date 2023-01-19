@@ -16,3 +16,8 @@
 .vidcontainer h3 {
   margin: 30px 0;
 }
+
+.videoplayer:hover {
+  scale: 1.05;
+  transition: 0.5s;
+}

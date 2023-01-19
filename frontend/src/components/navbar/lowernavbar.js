@@ -21,7 +21,11 @@ export default function LowerNavBar() {
           FOR OWNERS
         </Dropdown.Toggle>
         <Dropdown.Menu className={styles.subnav_content}>
-          <Dropdown.Item className={styles.subnav_content_item} eventKey="1">
+          <Dropdown.Item
+            className={styles.subnav_content_item}
+            eventKey="1"
+            href="/whyrent"
+          >
             Why Choose Us?
           </Dropdown.Item>
           <Dropdown.Item className={styles.subnav_content_item} eventKey="2">

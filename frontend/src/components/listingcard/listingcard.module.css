@@ -16,6 +16,8 @@
 
 .listingcard:hover {
   box-shadow: 2px 4px 4px #a95253;
+  scale: 1.1;
+  transition: 0.5s;
 }
 
 .houseimg {

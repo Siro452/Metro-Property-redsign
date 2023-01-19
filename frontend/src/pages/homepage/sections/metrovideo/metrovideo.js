@@ -7,14 +7,15 @@ export default function MetroVideo() {
   return (
     <div className={styles.vidcontainer}>
       <h3>Metro NZ - A Bespoke Auckland Property Management Company</h3>
-      <ReactPlayer
-        className={styles.videoplayer}
-        light={videoThumbNail}
-        url="https://www.youtube.com/watch?v=kTlv5_Bs8aw"
-        playing
-        playIcon={<img src={iconplay}></img>}
-        controls="true"
-      />
+      <div className={styles.videoplayer}>
+        <ReactPlayer
+          light={videoThumbNail}
+          url="https://www.youtube.com/watch?v=kTlv5_Bs8aw"
+          playing
+          playIcon={<img src={iconplay}></img>}
+          controls="true"
+        />
+      </div>
     </div>
   );
 }

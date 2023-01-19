@@ -18,133 +18,79 @@ import pet from "../../assets/peticonwhite.svg";
 import bus from "../../assets/busiconwhite.svg";
 import maplisting from "../../assets/maplisting.png";
 
-export default function IndividualListing({ location }) {
+
+
+export default function IndividualListing() {
   const [listingData, setListingData] = useState(false);
   const [petFriendly, setPetfriendly] = useState(false);
   const [paragraphBlurb, setParagraphBlurb] = useState(false);
   const [bullets, setBullets] = useState(false);
-  const [similarProperties, setSimilarProperties] = useState(false);
   const [similarPropertiesData, setSimilarPropertiesData] = useState(false);
-  const [slicedSimilarProperties, setSlicedSimilarProperties] = useState(false);
-  const [startIndex, setStartIndex] = useState(0);
-  const [endIndex, setEndIndex] = useState(3);
+  const [skipListings, setSkipListings] = useState(0);
+  const [similarListingsFound, setSimilarListingsFound] = useState([]);
 
+// Saving the listing id from the card clicked, that was stored in the url and saving it as a variable in the form for the DB
   const params = useParams();
   const id = { property: params.id };
-  console.log(id);
 
+// Retrieving the search params from the listing selected to query the DB for similar listings
   const searchParams = new URLSearchParams(window.location.search);
   const similar = JSON.parse(searchParams.get("state"));
-  console.log(similar);
-  console.log(similar.id);
 
-  //============ This useEffect will fetch the initial data for the listing page on load. It fetches the listing id from the dynamic route to do this.=============
+
+  //Fetch listing data for  page on load. It fetches the listing id from the dynamic route to do this.====================
   useEffect(() => {
-    // const queried = 1
-    const queried = new URLSearchParams(id).toString();
-    // const queried = new URLSearchParams(state).toString();
+    window.scrollTo(0, 0);
 
-    console.log(queried);
-    //    below here was querying {queried}
+    const toQuery = new URLSearchParams(id).toString();
 
-    fetch(`http://localhost:8080/PropertyListing?${queried}`)
+    fetch(`http://localhost:8080/PropertyListing?${toQuery}`)
       .then((res) => res.json())
       .then((resultsData) => {
         //Testing logs----------
-        //   console.log(resultsData)
-        //   console.log(resultsData[0])
         setListingData(resultsData[0]);
-        //   console.log(listingData)
-        //   console.log(similarProperties)
         setPetfriendly(resultsData[0].featuredinfo.petfriendly);
         setParagraphBlurb(resultsData[0].propertyinfo);
-        //   console.log(resultsData[0].propertyinfo[1])
         setBullets(resultsData[0].propertyinfobullets);
-        setSimilarProperties({
-          ["featuredinfo.featuredproperty"]:
-            resultsData[0].featuredinfo.featuredproperty,
-        });
-        console.log({
-          ["featuredinfo.featuredproperty"]:
-            resultsData[0].featuredinfo.featuredproperty,
-        });
-        //   handleSimilarProperties();
-      });
-  }, []);
-
-  //===================To get similar listings======================
-  useEffect(() => {
-    // const queried = 1
-    const queried = new URLSearchParams(id).toString();
-    // const queried = new URLSearchParams(state).toString();
-    const queryParameters = new URLSearchParams(similar).toString();
-    console.log(queried);
-    console.log(queryParameters);
-    //    below here was querying {queried}
-
-    fetch(`http://localhost:8080/SimilarProperties?${queryParameters}`)
-      .then((res) => res.json())
-      .then((resultsData) => {
-        //Testing logs----------
-        console.log(resultsData);
-        setSimilarPropertiesData(resultsData);
-
-        const toSlice = [...resultsData];
-        //   const sliced = toSlice.slice(startIndex, endIndex)
-        const sliced = toSlice.slice(0, 3);
-        console.log(sliced);
-        setSlicedSimilarProperties(sliced);
+        
       });
   }, []);
 
 
-
-  // ==============Trying to figure out changing listins- this method is not working================
+  // ============== To get similar listings and change these when arrows clicked ================
   useEffect(() => {
-    // const queried = 1
-    const queried = new URLSearchParams(id).toString();
-    // const queried = new URLSearchParams(state).toString();
-    const queryParameters = new URLSearchParams(similar).toString();
-    console.log(queried);
-    //    below here was querying {queried}
+    
+    const toInsert = { ...similar };
+
+    // Adding the skip listings to the query
+    toInsert.skip = skipListings;
+
+    const queryParameters = new URLSearchParams(toInsert).toString();
 
     fetch(`http://localhost:8080/SimilarProperties?${queryParameters}`)
       .then((res) => res.json())
       .then((resultsData) => {
-        //Testing logs----------
-        console.log(resultsData);
-        setSimilarPropertiesData(resultsData);
-
-        const toSlice = [...resultsData];
-        const sliced = toSlice.slice(startIndex, endIndex);
-        //    const sliced = toSlice.slice(0, 3)
-        console.log(sliced);
-        setSlicedSimilarProperties(sliced);
+        if (resultsData.length === 0) {
+          setSimilarListingsFound(false);
+        } else {
+          setSimilarListingsFound(true);
+          setSimilarPropertiesData(resultsData);
+        }
       });
-  }, [setStartIndex, setEndIndex]);
+  }, [skipListings]);
 
-
-
-  // ===================Handle clicks on similar properties slider================
+  // =================== Handle clicks on to change similar properties carousel ================
   function handleShowPrevious() {
-    console.log(similarPropertiesData);
-    if (startIndex === 0) {
-      setEndIndex(3);
-    } else {
-      setStartIndex(startIndex - 1);
-      setEndIndex(endIndex - 1);
+    if (skipListings > 0) {
+      setSkipListings(skipListings - 1);
     }
   }
 
   function handleShowNext() {
-    if (endIndex < similarPropertiesData.length) {
-      setStartIndex(startIndex + 1);
-      setEndIndex(endIndex + 1);
+    if (skipListings < similarPropertiesData.length) {
+      setSkipListings(skipListings + 1);
     }
   }
-
-
-  
 
   return (
     <div className={styles.outermostcontainer}>
@@ -231,9 +177,9 @@ export default function IndividualListing({ location }) {
 
       <SimilarProperties
         similarPropertiesData={similarPropertiesData}
-        slicedSimilarProperties={slicedSimilarProperties}
         handleShowNext={handleShowNext}
         handleShowPrevious={handleShowPrevious}
+        similarListingsFound={similarListingsFound}
       />
 
       <Footer />

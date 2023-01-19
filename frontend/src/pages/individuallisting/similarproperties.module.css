@@ -63,8 +63,22 @@
     cursor: pointer;
     /* background-color: rgb(151, 151, 183); */
     transform: rotate(180deg);
+    transition: all .5s;
 }
 
 .arrowleft:hover{
     opacity: 0.3;
+}
+
+.arrowright:hover{
+    opacity: 0.3;
+}
+
+.noresults{
+    margin-top: 3rem;
+    font-family: Inter, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+
 }

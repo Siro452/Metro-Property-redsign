@@ -17,7 +17,7 @@ export default function HomePageBodyHeader() {
         </p>
         <SearchButtonRed
           linkName="/propertiestorent"
-          buttonTitle={"Find A Propery"}
+          buttonTitle={"Find A Property"}
         />
       </div>
     </div>

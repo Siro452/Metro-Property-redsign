@@ -14,7 +14,7 @@ export default function SimilarProperties(props) {
         </p>
 
         {props.similarListingsFound ? <div className={styles.cardcontainer}>
-            <div className={styles.arrowleft} onClick={props.handleShowPrevious}><img src={backarrow} /></div>
+            <div className={styles.arrowleft} onClick={props.handleShowPrevious}><img src={backarrow} alt="back arrow"/></div>
             {props.similarPropertiesData &&
             props.similarPropertiesData.map((listing, index) => {
                 return (
@@ -30,7 +30,7 @@ export default function SimilarProperties(props) {
                 />
                 );
             })}
-            <div className={styles.arrowright} onClick={props.handleShowNext}><img src={backarrow} /></div>
+            <div className={styles.arrowright} onClick={props.handleShowNext}><img src={backarrow} alt="back arrow" /></div>
         </div> 
         : <div className={styles.noresults}>Unfortnately, no similar listings were found for this property.</div>}
 

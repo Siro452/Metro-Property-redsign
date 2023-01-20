@@ -15,6 +15,7 @@ export default function ListingCard(props) {
   };
   const searchParams = new URLSearchParams();
   searchParams.set("state", JSON.stringify(state));
+  
 
   return (
     <Link

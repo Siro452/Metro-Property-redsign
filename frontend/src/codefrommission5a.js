@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function Codefrommission5a() {
   const [inputValue, setInputValue] = useState("");
   const [greetingToDisplay, setGreetingToDisplay] = useState("");
+  const [requestData, setRequestData] = useState("");
 
   const handleInput = () => {
     console.log(inputValue);
@@ -32,6 +33,7 @@ export default function Codefrommission5a() {
       .then((resultsData) => {
         //Testing logs----------
         console.log(resultsData);
+        setRequestData(resultsData.message);
       });
   };
 
@@ -46,6 +48,7 @@ export default function Codefrommission5a() {
       <button onClick={handleInput}>Send the message</button>
       <div>{greetingToDisplay === false ? "" : greetingToDisplay}</div>
       <button onClick={getRequest}>Get request</button>
+      <div>{requestData === false ? "" : requestData}</div>
     </div>
   );
 }

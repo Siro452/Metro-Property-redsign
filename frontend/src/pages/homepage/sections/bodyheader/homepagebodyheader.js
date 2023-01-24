@@ -5,7 +5,12 @@ import background from "../../../../assets/HomepageHeaderBackground.png";
 export default function HomePageBodyHeader() {
   return (
     <div
-      style={{ backgroundImage: `url(${background})` }}
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
       className={styles.bodybackground}
     >
       <div className={styles.wordscontainer}>
